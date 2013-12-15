@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>account activation via email - vice or virtue?</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans|Bree+Serif" />
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/syntax.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    
+    <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+     <svg id="stripe" viewBox="0 0 500 5" version="1.1" x="0px" y="0px"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" preserveAspectRatio="none">
+        <g>
+            <path d="M 0 0 L 100 0 L 100 10 L 0 10 Z" fill="#6E554A" id="stripe-1" />
+            <path d="M 100 0 L 200 0 L 200 10 L 100 10 Z" fill="#CC333F" id="stripe-2" />
+            <path d="M 200 0 L 300 0 L 300 10 L 200 10 Z" fill="#D7BA5A" id="stripe-3" />
+            <path d="M 300 0 L 400 0 L 400 10 L 300 10 Z" fill="#2E959F" id="stripe-4" />
+            <path d="M 400 0 L 500 0 L 500 10 L 400 10 Z" fill="#a5cb33" id="stripe-5" />
+        </g>
+    </svg>
+    <div class="wrapper">
+        <header class="cf" role="banner">
+            <a class="logo" href="/">
+                <img src="/assets/images/dc.svg" alt="" />
+                Dave Cranwell
+            </a>
+        </header>
+
+        <div class="site cf">
+            <nav role="navigation" class="nav-main">
+                <h2>Recent posts</h2>
+                <ul class="posts">
+                    
+                        <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
+                    
+                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
+                    
+                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
+                    
+                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
+                    
+                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
+                    
+                        <li><h3><a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Text resizing when rotating in iOS</a></h3></li>
+                    
+                        <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
+                    
+                        <li><h3><a href="/2011/05/10/pecr-cookies-and-you.html">PECR, cookies and you</a></h3></li>
+                    
+                        <li><h3><a href="/2011/04/03/account-activation-via-email-vice-or-virtue.html">account activation via email - vice or virtue?</a></h3></li>
+                    
+                        <li><h3><a href="/2011/03/16/webfonts-fonts-com-font-face-support-in-ie9-updated.html">webfonts.fonts.com @font-face support in IE9 (updated)</a></h3></li>
+                    
+                </ul>
+            </nav>
+
+            <div role="main" class="main">
+                <article class="post">
+	<h1>account activation via email - vice or virtue?</h1>
+	<!--<p class="meta">03 Apr 2011</p>-->
+
+    <p><p>I&#39;ve recently read a number of posts and tweets regarding email activation of website accounts. This is the process of sending the user an email upon&nbsp;successful registration, requiring them to access their email and often click a link to confirm the account to actually use it on the site. The impression I get is an increased intolerance for the process, but there are many valid reasons for using it.</p><p>In particular I recently read a blog/rant complaining that the only reasons it was used were A. so that the site owner could verify you owned the email address and B. to keep bots out. This appears to overlook a number of&nbsp;far more significant reasons. In no particular order:</p><h3>1. Account recovery</h3><p>As a new user of a site it&#39;s important to know your registration is successful. Many sites will instantly log you in but for the sites which don&#39;t, if you&#39;ve managed to enter your email address incorrectly, possibly even twice, you&#39;ll never know it. The welcome email will never arrive. If you&#39;ve been logged in automatically, you may choose to &quot;remember me&quot; or similar. Some weeks or months down the line when you&#39;ve predictably forgotten your password, you&#39;ll only receive a stony silence from the website when do the &quot;password reminder&quot; process.&nbsp;</p><p>The activation email in this case is really more like a receipt. It&#39;s not for the site owner&#39;s benefit - it&#39;s for your own!</p><h3>2. Signal vs Noise</h3><p>Its not all about you. If you&#39;re registering for an account on a campaigning website for example, that website may send out thousands of emails per day not to mention thousands of pieces of snail mail too. The site owner wants to avoid spamming people and needs to cut their own costs by not sending out unnecessary communications. Even email can cost money in volume and the postal service obviously does, so it&#39;s about quality not quantity: a site owner needs to know their registrants are real. They gain more from a few truly committed users who are willing to evangelise the product, than hundreds of people or robots with no particular interest. This is also a good argument for Opt-In.</p><p>If you&#39;ve signed up to your favorite charity, be thankful they require verification: by doing so, they <em>won&#39;t</em> be wasting your donations on sending communications to non-existent or ungrateful recipients.</p><h3>3. Re-registration abuse</h3><p>Many sites run a forum, voting systems, polls or other user-generated content. As user-generated content can be intentionally abused by the users moderation is a necessity with these systems. Forum trolls, rating abusers, and poll-skewing can all be simply addressed by requiring users to validate each account they register with the website.</p><p>There are no foolproof countermeasures against a really malicious user, but the tedium of having to register several email accounts is often enough to deter the more petty digital criminals who are generally more numerous. The negligible time and effort each users puts into activating their accounts goes a cumulatively long way towards preventing abuse. Every activation made counts towards a moderator that <em>doesn&#39;t</em>&nbsp;need to be employed.</p><h3>4. Mistaken spamming</h3><p>If a user registers with an email address they don&#39;t own (even accidentally) and that address is never confirmed, the website might go on to inundate that email address with messages. Confirming the owner meant to use the email address they provided just ensures you don&#39;t receive irate calls from users who have no idea why they&#39;re getting your emails.</p><p>There are almost certainly more perfectly valid reasons I&#39;ve missed.</p><p>&nbsp;</p><p>On the&nbsp;flip-side&nbsp;to all of this there are many sites out there that send activation emails unnecessarily. Developers should take care they don&#39;t put up unnecessary barriers to users doing what they want:</p><ol><li>Weigh up the benefits of knowing your users are real but risking conversion drop off. For example you&#39;re going to have to heavily moderate the comments system of a busy site anyway, is activation really going to help that much?&nbsp;</li><li>Try and use other methods of verifying the user is real before resorting to activation emails. Prevent bots with captchas or Turing tests.&nbsp;Get users to enter the same email address twice as a confirmation to check they got it right. Perhaps even try one of those scripts which contacts the user&#39;s mailserver directly to verify the address.</li><li>Don&#39;t rely on the activation email to do all the work. Users should be told they should&nbsp;<em>expect</em>&nbsp;an email and what to do if it doesn&#39;t arrive. Even an activation email can be junked by someone not expecting it. One of the reasons for the backlash against email activation may well be because its so apparently unnecessary - users may also appreciate being told how their activation helps: reducing costs, recovering passwords etc.</li><li>Make your activation processes efficient. If a user attempts to access protected-page-A.html, make sure the act of clicking &quot;activate&quot; takes the user to that page immediately on success - don&#39;t throw them to the account area or somewhere else. That &quot;Welcome to your account area&quot; message is well-meaning but ultimately&nbsp;interruptive if it diverts the user.</li></ol></p>
+
+</article>
+
+
+                <nav role="navigation" class="nav-prevnext">
+                    <ul class="cf">
+                        <li class="newer">
+                             
+                                <a href="/2011/05/10/pecr-cookies-and-you.html">Newer post</a>
+                            
+                        </li>
+                        <li class="older">
+                             
+                                <a href="/2011/03/16/webfonts-fonts-com-font-face-support-in-ie9-updated.html">Older post</a>
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-435939-4');ga('send','pageview');
+    </script>
+</body>
+</html>

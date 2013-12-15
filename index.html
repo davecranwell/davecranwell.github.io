@@ -1,1 +1,11 @@
-Coming soon
+---
+layout: default
+title: Your New Jekyll Site
+---
+
+<article class="post">
+    {% for post in site.posts limit:1 %}
+        <h1>{{ post.title }}</h1>
+        {{ post.content }}
+    {% endfor %}
+</article>

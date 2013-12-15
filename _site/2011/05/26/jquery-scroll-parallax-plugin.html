@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>jQuery scroll parallax plugin</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans|Bree+Serif" />
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/syntax.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    
+    <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+     <svg id="stripe" viewBox="0 0 500 5" version="1.1" x="0px" y="0px"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" preserveAspectRatio="none">
+        <g>
+            <path d="M 0 0 L 100 0 L 100 10 L 0 10 Z" fill="#6E554A" id="stripe-1" />
+            <path d="M 100 0 L 200 0 L 200 10 L 100 10 Z" fill="#CC333F" id="stripe-2" />
+            <path d="M 200 0 L 300 0 L 300 10 L 200 10 Z" fill="#D7BA5A" id="stripe-3" />
+            <path d="M 300 0 L 400 0 L 400 10 L 300 10 Z" fill="#2E959F" id="stripe-4" />
+            <path d="M 400 0 L 500 0 L 500 10 L 400 10 Z" fill="#a5cb33" id="stripe-5" />
+        </g>
+    </svg>
+    <div class="wrapper">
+        <header class="cf" role="banner">
+            <a class="logo" href="/">
+                <img src="/assets/images/dc.svg" alt="" />
+                Dave Cranwell
+            </a>
+        </header>
+
+        <div class="site cf">
+            <nav role="navigation" class="nav-main">
+                <h2>Recent posts</h2>
+                <ul class="posts">
+                    
+                        <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
+                    
+                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
+                    
+                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
+                    
+                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
+                    
+                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
+                    
+                        <li><h3><a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Text resizing when rotating in iOS</a></h3></li>
+                    
+                        <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
+                    
+                        <li><h3><a href="/2011/05/10/pecr-cookies-and-you.html">PECR, cookies and you</a></h3></li>
+                    
+                        <li><h3><a href="/2011/04/03/account-activation-via-email-vice-or-virtue.html">account activation via email - vice or virtue?</a></h3></li>
+                    
+                        <li><h3><a href="/2011/03/16/webfonts-fonts-com-font-face-support-in-ie9-updated.html">webfonts.fonts.com @font-face support in IE9 (updated)</a></h3></li>
+                    
+                </ul>
+            </nav>
+
+            <div role="main" class="main">
+                <article class="post">
+	<h1>jQuery scroll parallax plugin</h1>
+	<!--<p class="meta">26 May 2011</p>-->
+
+    <h3>Examples</h3>
+
+<p><a href="http://timeline.lshtm.ac.uk" target="_blank">London School of Hygiene and Tropical Medicine</a></p>
+
+<p><a href="http://nhstimeline.nuffieldtrust.org.uk/">Nuffield Trust</a></p>
+
+<p><a href="http://www.davecranwell.com/sites/default/files/examples/scroll-parallax/index-horizontal.html">Generic horizontal example</a></p>
+
+<p><a href="http://www.davecranwell.com/sites/default/files/examples/scroll-parallax/index.html">Generic vertical example</a></p>
+
+<h3>Details</h3>
+
+<p><p>Parallax, for those not in the know, &quot;<em>is an apparent displacement or difference in the apparent position of an object viewed along two different lines of sight</em>&quot; (wikipedia). You&#39;ll perhaps know it better as &quot;that sideways pan effect animators use where the distance moves slowly but layers of scenary nearer the &#39;camera&#39; move quicker&quot;.</p><p>It&#39;s become a popular effect on websites, notably <a href="http://silverbackapp.com/" target="_blank">http://silverbackapp.com/</a> (try resizing your browser horizontally) which pushed the effect to the fore due to the notoriety of the agency behind it (ClearLeft). Silverback was released several years ago but more recently Nike created <a href="http://nikebetterworld.com" target="_blank">http://nikebetterworld.com</a> which also uses the effect rather nicely.</p><p>I&#39;ve had cause to use it at work, so I wrote a jQuery plugin to make it easier.</p><p>Its important to note that in the Nike example which this plugin tries to recreate&nbsp;(and my own examples below), much of the effect is not in fact controlled by javascript. The slow movement of the background image is actually because without the JS it is completely stationary in the centre of the browser window, thanks to <code class="inline-code">background-position:fixed</code>. What the javascript does it to move the background image very slowly, like it isn&#39;t fixed at all.</p><br /><p><a href="https://github.com/davecranwell/jQuery-scroll-parallax" target="_blank" class="button github">Download the plugin from github</a></p><h3>How to use it</h3><ol><li>Create several elements in your HTML page which you want to apply the parallax effect to. Set the background-image of each element. The scrollParallax plugin currently only works on background images. In the example <a href="https://github.com/davecranwell/jQuery-scroll-parallax/blob/master/index.html" target="_blank">index.html</a> in github I&#39;ve created a unordered list in which each list item is one of the parallax elements. Each background image needs to be quite large - the full width/height of browser for example - for the effect to work best.</li><li>Parallax looks nicest when there are several items all moving at different speeds. I&#39;d recommend you therefore add some children within the elements you created in step 1, each with their own background images which we&#39;ll set to move at a different speed.</li><li>Apply the example <a href="https://github.com/davecranwell/jQuery-scroll-parallax/blob/master/styles.css" target="_blank">styles.css</a> to the elements you&#39;ve created. The important attributes are the position, overflow and background-position ones (although you&#39;ll note I&#39;ve applied the background-position:fixed by using the background shortcut). The 100% width and height are also vital for the child elements. With the styles in place you&#39;ll already be able to see the masking effect working as you scroll through.</li><li>Include the jQuery (1.4.3+ required) and jQuery.scrollParallax.js javascript files in your HTML. You&#39;ll also need the <a href="https://github.com/protonet/jquery.inview/" target="_blank">jquery.inview.js plugin</a>.</li><li>Apply the scrollParallax function to each element you want to move, using the standard jQuery selector method, illustrated in the <a href="https://github.com/davecranwell/jQuery-scroll-parallax/blob/master/scripts.js" target="_blank">scripts.js</a> file on github</li></ol><h3>Options</h3><p>The plugin has just 3 options:</p><table style="width: 100%;" border="0" cellpadding="5"><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>speed</td><td>0.2</td><td>Any positive or negative value. This is the speed with which the background will move. Positive values move the background image <strong>with</strong> the direction of scrolling. Negative moves the image <strong>against</strong> the scroll. Negative values look the best.<br /></td></tr><tr><td>axis</td><td>&#39;x,y&#39;</td><td>&#39;x&#39;/&#39;y&#39;/&#39;x,y&#39;. Which axis are parallax-enabled. By default both axes are enabled, but for whatever reasons you may wish to lock it to one.</td></tr><tr><td>debug</td><td>false</td><td>true/false. Whether to enable debugging to the console. Useful only if you care about the numbers, which you most probably don&#39;t.</td></tr></tbody></table></p>
+
+</article>
+
+
+                <nav role="navigation" class="nav-prevnext">
+                    <ul class="cf">
+                        <li class="newer">
+                             
+                                <a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Newer post</a>
+                            
+                        </li>
+                        <li class="older">
+                             
+                                <a href="/2011/05/10/pecr-cookies-and-you.html">Older post</a>
+                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-435939-4');ga('send','pageview');
+    </script>
+</body>
+</html>
