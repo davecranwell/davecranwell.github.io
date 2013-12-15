@@ -30,7 +30,7 @@ h2, h3{
 
 blockquote{
 	background:#FDF6DD;
-	padding:20px 20px 0 20px;
+	padding:2em;
 	width:80%;
 	margin: 0px auto 15px auto;
 	font-size:1.1em;
@@ -46,7 +46,7 @@ nav ul,nav li{
 	list-style-type:none;
 }
 
-a, a:visited{
+a, a:visited, a:active{
 	text-decoration:none;
 	color:#2E959F;
 	-webkit-transition: all 0.3s ease;
@@ -66,6 +66,7 @@ code{
 	background-color:#f8f8f8;	
 	font-family:monospace;
 	border:0;
+	white-space: nowrap;
 }
 	code{
 		padding:0.2em;
@@ -74,6 +75,9 @@ code{
 
 pre code{
 	display:block;
+	padding-left:1em;
+	padding-right:1em;
+	white-space:pre-wrap;
 }
 
 .wrapper{
@@ -101,6 +105,7 @@ a.logo{
 	line-height:1em;
 	padding-top:1em;
 	display:block;
+	float:left;
 }
 	.logo img{
 		margin-top:-1em;
@@ -128,20 +133,44 @@ a.logo{
 		font-family: 'PT Sans', Helvetica,Arial,sans-serif;
 	}
 
-nav .newer, nav .older{
-	float:left;
-	width:50%;
+.nav-prevnext{
+	margin:2em 0;
+	border-top:1px solid #dfdfdf;
 }
-nav .newer a, nav .older a{
-	border:1px solid #dfdfdf;
-	padding:0.5em 1em;
+	nav .newer, nav .older{
+		float:left;
+		width:50%;
+	}
+	nav .newer a, nav .older a{
+		border:1px solid #dfdfdf;
+		padding:0.5em 1em;
+		line-height:2.2em;
+	}
+	nav .newer a:hover, nav .older a:hover{
+		background-color:#2E959F;
+		color:white;
+	}
+	nav .older{
+		text-align:right;
+	}
+
+.nav-networks{
+	margin-top:1em;
+	float:right;
+	width:20%;
 }
-nav .newer a:hover, nav .older a:hover{
-	background-color:#2E959F;
-	color:white;
-}
-nav .older{
+.nav-networks li{
 	text-align:right;
+}
+.nav-networks h2{
+	display:none;
+}
+.nav-networks a{
+	color:#444;
+	font-size:0.8em;
+}
+.nav-networks a:hover{
+	text-decoration:underline;
 }
 
 .cf:before,
@@ -178,11 +207,19 @@ nav .older{
 	.nav-main{
 		padding-left:0;
 		padding-top:1.6em;
-		width:25%;
+		width:30%;
 	}
 	.main{
 		float:right;
+		width:70%;
+	}
+
+}
+@media screen and (min-width:56.889em){
+	.nav-main{
+		width:25%;
+	}
+	.main{
 		width:75%;
-		max-width:50em;
 	}
 }

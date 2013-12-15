@@ -19,7 +19,16 @@
 </head>
 
 <body>
-     <svg id="stripe" viewBox="0 0 500 5" version="1.1" x="0px" y="0px"
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=689655397735094";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <svg id="stripe" viewBox="0 0 500 5" version="1.1" x="0px" y="0px"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" preserveAspectRatio="none">
         <g>
             <path d="M 0 0 L 100 0 L 100 10 L 0 10 Z" fill="#6E554A" id="stripe-1" />
@@ -35,10 +44,25 @@
                 <img src="/assets/images/dc.svg" alt="" />
                 Dave Cranwell
             </a>
+ 
+            <nav class="nav-networks" role="navigation" aria-label="Networks">
+                <h2 aria-hidden="true">Networks</h2>
+                <ul>
+                    <li><a href="http://github.com/davecranwell">Github</a></li>
+                    <li><a href="">Linkedin</a></li>
+                </ul>
+            </nav>
         </header>
 
         <div class="site cf">
             <div role="main" class="main">
+                <!-- <div class="social">
+                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="davecranwell">Tweet</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+ -->
                 <article class="post">
 	<h1>Adding @media query device support in css3 - its too simple to skip</h1>
 	<!--<p class="meta">21 Feb 2011</p>-->
@@ -49,7 +73,7 @@
 
 
                 
-                <nav role="navigation" class="nav-prevnext">
+                <nav role="navigation" class="nav-prevnext" aria-label="Newer or Older posts">
                     <ul class="cf">
                         <li class="newer">
                              
@@ -66,9 +90,13 @@
                 
             </div>
 
-            <nav role="navigation" class="nav-main">
-                <h2>Recent posts</h2>
+            <nav role="navigation" class="nav-main" aria-label="Recent posts">
+                <h2 aria-hidden="true">Recent posts</h2>
                 <ul class="posts">
+                    
+                        <li><h3><a href="/2013/12/13/new-site-on-jekyll.html">The right tools for the job</a></h3></li>
+                    
+                        <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
                     
                         <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
                     
@@ -85,10 +113,6 @@
                         <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
                     
                         <li><h3><a href="/2011/05/10/pecr-cookies-and-you.html">PECR, cookies and you</a></h3></li>
-                    
-                        <li><h3><a href="/2011/04/03/account-activation-via-email-vice-or-virtue.html">account activation via email - vice or virtue?</a></h3></li>
-                    
-                        <li><h3><a href="/2011/03/16/webfonts-fonts-com-font-face-support-in-ie9-updated.html">webfonts.fonts.com @font-face support in IE9 (updated)</a></h3></li>
                     
                 </ul>
             </nav>

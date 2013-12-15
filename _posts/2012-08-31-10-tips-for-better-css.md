@@ -208,10 +208,10 @@ is written as follows, but gets compiled into exactly the same CSS
 
 {% highlight css %}
 .teaser ul{
-  margin:0
+  margin:0;
 
   li{
-    color:red
+    color:red;
   }
 }
 {% endhighlight %}
