@@ -3,9 +3,14 @@ html{
 }
 body{
 	font-family: 'PT Sans', Helvetica,Arial,sans-serif;
-	padding:2em;
+	padding:1em;
 	line-height:1.7em;
 	color:#444;
+	-webkit-transition: padding 0.3s ease;
+	-moz-transition: padding 0.3s ease;
+	-ms-transition: padding 0.3s ease;
+	-o-transition: padding 0.3s ease;
+	transition: padding 0.3s ease;
 }
 h1,h2,h3,h4,h5{
 	font-family: 'Bree Serif', Georgia, serif;
@@ -13,7 +18,11 @@ h1,h2,h3,h4,h5{
 	margin-top:0;
 }
 h1{
+	font-size:1.4em;
 	line-height:1.3em;
+}
+h2{
+	font-size:1.3em;
 }
 h2, h3{
 	line-height:1.6em;
@@ -40,7 +49,15 @@ nav ul,nav li{
 a, a:visited{
 	text-decoration:none;
 	color:#2E959F;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
+	a:hover{
+		color:#435A5E;
+	}
 	.post a{
 		text-decoration:underline;
 	}
@@ -66,7 +83,7 @@ pre code{
 
 header{
 	position:relative;
-	margin-bottom:2em;
+	margin-bottom:1em;
 }
 
 #stripe{
@@ -95,18 +112,7 @@ a.logo{
 		float:left;
 	}
 
-.nav-main, .main{
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	display:inline;
-	float:left;
-	padding:0 2em;
-}
-
 .nav-main{
-	padding-top:1.6em;
-	width:15em;
 	padding-left:0;
 }
 	.nav-main li{
@@ -122,13 +128,17 @@ a.logo{
 		font-family: 'PT Sans', Helvetica,Arial,sans-serif;
 	}
 
-.main{
-	width:40em;
-}
-
 nav .newer, nav .older{
 	float:left;
 	width:50%;
+}
+nav .newer a, nav .older a{
+	border:1px solid #dfdfdf;
+	padding:0.5em 1em;
+}
+nav .newer a:hover, nav .older a:hover{
+	background-color:#2E959F;
+	color:white;
 }
 nav .older{
 	text-align:right;
@@ -141,4 +151,38 @@ nav .older{
 }
 .cf:after {
     clear: both;
+}
+
+@media screen and (min-width:50em){
+	body{
+		padding:2em;
+	}
+	header{
+		margin-bottom:2em;
+	}
+	h1{
+		font-size:2em;
+	}
+	h2{
+		font-size:1.6em;
+	}
+	.nav-main, .main{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		display:inline;
+		float:left;
+		padding:0 2em;
+	}
+
+	.nav-main{
+		padding-left:0;
+		padding-top:1.6em;
+		width:25%;
+	}
+	.main{
+		float:right;
+		width:75%;
+		max-width:50em;
+	}
 }
