@@ -5,7 +5,7 @@ title: Dabbling with SVG
 
 The "DC" logo top left and the coloured strip across the top are both SVG. Thanks to <a href="http://fireworks.abeall.com">a Fireworks SVG export plugin</a> both were simple to create from Fireworks layered PNGs.
 
-If you're not already a convert, the SVG elevator pitch is this: SVG gives the ability to use pure vector images in live sites, where every colour fill, every stroke, shape or group of shapes can be controlled via Javascript and/or CSS. No compression artefacts, no need for retina versions. They're easily cached, easily compressable on the server side and they're even written in a human-readable format you can edit by hand.
+If you're not already a convert, the SVG elevator pitch is this: SVG gives the ability to use pure vector images in live sites, where every colour fill, every stroke, shape or group of shapes can be controlled and animated via Javascript and/or CSS. No compression artefacts, no need for retina versions. They're easily cached, easily compressable on the server side and they're even written in a human-readable format you can edit by hand.
 
 Check this:
 
