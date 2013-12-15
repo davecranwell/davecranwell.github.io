@@ -42,6 +42,7 @@
             <div role="main" class="main">
                 {{ content }}
 
+                {% if page.next.url or post.next.url or page.previous.url or post.previous.url %}
                 <nav role="navigation" class="nav-prevnext">
                     <ul class="cf">
                         <li class="newer">
@@ -52,7 +53,7 @@
                             {% endif %}
                         </li>
                         <li class="older">
-                            {% if page.previous.url or post.next.url %} 
+                            {% if page.previous.url or post.previous.url %} 
                                 <a href="{{ page.previous.url }}{{ post.previous.url }}">Older post</a>
                             {% else %}
                                 &nbsp;
@@ -60,6 +61,7 @@
                         </li>
                     </ul>
                 </nav>
+                {% endif %}
             </div>
 
             <nav role="navigation" class="nav-main">

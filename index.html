@@ -7,24 +7,16 @@ title: Your New Jekyll Site
     {% for post in site.posts limit:1 %}
         <h1>{{ post.title }}</h1>
         {{ post.content }}
-
-         <nav role="navigation" class="nav-prevnext">
-                    <ul class="cf">
-                        <li class="newer">
-                            {% if post.next.url %} 
-                                <a href="{{ post.next.url }}">Newer post</a>
-                            {% else %}
-                                &nbsp;
-                            {% endif %}
-                        </li>
-                        <li class="older">
-                            {% if page.previous.url or post.next.url %} 
-                                <a href="{{ page.previous.url }}{{ post.previous.url }}">Older post</a>
-                            {% else %}
-                                &nbsp;
-                            {% endif %}
-                        </li>
-                    </ul>
-                </nav>
     {% endfor %}
 </article>
+
+{% for post in site.posts limit:1 offset:1 %}
+     <nav role="navigation" class="nav-prevnext">
+        <ul class="cf">
+            <li class="newer">&nbsp;</li>
+            <li class="older">
+                <a href="{{ post.previous.url }}">Older post</a>
+            </li>
+        </ul>
+    </nav>
+{% endfor %}
