@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Dave Cranwell | A hosting conundrum</title>
+    <title>A hosting conundrum | Dave CranwellDave Cranwell | A hosting conundrum</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -17,7 +17,6 @@
     
     <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-
 <body>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -84,13 +83,27 @@
                 </div>
  -->
                 <article class="post">
-	<h1>A hosting conundrum</h1>
-	<!--<p class="meta">12 Oct 2011</p>-->
+    <h1>A hosting conundrum</h1>
+    <!--<p class="meta">12 Oct 2011</p>-->
 
     <p>Its time to upgrade my hosting but the options are many and confusing. I currently have a single-core Pentium 4 dedicated server which hosts everything. I can either split up the services I currently host myself and hand them off to third parties, or keep them all together. Then there's the question of Virtual or Dedicated.</p><p>My current server hosts several small sites, several private SVN repos and one large site responsible for using most of the server's resources. None of it is backed up, which is a Big Deal.</p><p>Moving the large site to its own host could cost as much as the entire current server. Alone it requires 2GB ram, 700GB of bandwidth a month and constant MySQL processes. I'd still have to find hosting for all the other sites and services too.</p><p>SVN repos could be moved to a third party host. The SVN solution is probably my single biggest need as none of the other sites would be running if their source code was lost.</p><p>That still leaves the websites. Do I host them together or separately? The latter would be costly but it would be more flexible if any one (or group) of those sites required more resources. Similarly a Dedicated server gives rise to flexibility issues; a Virtual solution would mean I could throw in RAM, processors and disk space whenever necessary, but then a Dedicated server would have more burstable, stable resources to allocate quicker, even if they're limited and inflexible.</p><p>After all that, I still need a backup solution capable of storing 50GB+.</p><p>I like the idea of a Virtual, cloud solution. Being able to keep my websites' source on a cloud device and change the OS and hardware around it as I see fit is definitely appealing. However the cost of such a solution is no less than I'm paying at the moment and I'd still not have a backup solution. My paranoia of losing data is growing and I feel backup or movable storage is more important than the speed of a larger but Dedicated machine.</p><p>Balancing cost and resource demand is complex</p>
 
 </article>
 
+<section>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'davecranwell';
+        var disqus_identifier = '/2011/10/12/a-hosting-conundrum';
+        var disqus_title = 'A hosting conundrum';
+        var disqus_url = 'http://davecranwell.com/2011/10/12/a-hosting-conundrum.html';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+</section>
 
                 
                     <nav role="navigation" class="nav-prevnext" aria-label="Newer or Older posts">

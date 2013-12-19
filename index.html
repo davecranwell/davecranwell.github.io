@@ -3,12 +3,27 @@ layout: default
 title: Front End rambler, Jack of all trades master of many
 ---
 
-<article class="post">
-    {% for post in site.posts limit:1 %}
+{% for post in site.posts limit:1 %}
+    <article class="post">
         <h1>{{ post.title }}</h1>
         {{ post.content }}
-    {% endfor %}
-</article>
+    </article>
+
+    <section>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'davecranwell';
+            var disqus_identifier = '{{ post.id }}';
+            var disqus_title = '{{ post.title }}';
+            var disqus_url = 'http://{{ site.name }}{{ page.url }}';
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+    </section>
+{% endfor %}
 
 {% for post in site.posts limit:1 offset:1 %}
      <nav role="navigation" class="nav-prevnext">
