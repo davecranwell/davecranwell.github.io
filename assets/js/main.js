@@ -24,7 +24,7 @@ function switchPalette(){
 }
 
 $(function(){
-	if(!palettes){
+	if(!palettes || !palettes.length){
 		$.getJSON(colorLoversUrl + "?jsonCallback=?", { numResults: 100, resultOffset: offset }, function(data) {
 			window.localStorage.setItem('palettes', JSON.stringify(data));
 			// don't change color on first arrival
