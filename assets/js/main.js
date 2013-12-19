@@ -3,7 +3,7 @@ var palettes = JSON.parse(window.localStorage.getItem('palettes'));
 var offset = 0;
 
 function switchPalette(){
-	var newPalette = palettes.pop();
+	var newPalette = palettes.shift();
 	window.localStorage.setItem('palettes',JSON.stringify(palettes));
 
 	var s1 = Snap("#dc-logo");

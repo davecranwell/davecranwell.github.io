@@ -17,4 +17,26 @@ The top strip is more of the same but in this instance is declared inline. SVG b
 
 For further reading, Chris Coyer has a <a href="http://css-tricks.com/using-svg/">good starting point</a>. The main caveat being that we're talking about support for IE9+ only, but as IE8 has been on the naughty step for at least 2 years, we can start crossing it off our browser support lists.
 
-<strong>EDIT</strong> I've done some playing with <a href="http://snapsvg.io/">SnapSVG</a> and the under-sold <a href="http://www.colourlovers.com/api">colorlovers.com API</a> to rotate colours in the logo and stripe automatically. <a href="/assets/js/main.js">Check the source here</a>. It won't do it on first load, but every page thereafter will have the logo and stripe rotated to one of colorlovers top 100 palettes. Try refreshing. Yes, I'm fully aware this is completely pointless!
+<strong>EDIT</strong> I've done some playing with <a href="http://snapsvg.io/">SnapSVG</a> and the under-sold <a href="http://www.colourlovers.com/api">colorlovers.com API</a> to rotate colours in the logo and stripe automatically. It won't do it on first load, but every page thereafter will have the logo and stripe rotated to one of colorlovers top 100 palettes. Try refreshing. Yes, I'm fully aware this is completely pointless!
+
+If you check the source you'll see each element in the svg has an ID, so changing each element's properties in Snap is as easy as:
+
+{% highlight js %}
+var newPalette = yourFunctionThatGetsPaletteAsArray();
+
+var s1 = Snap("#dc-logo");
+s1.select("#d-top").attr({fill: '#' + newPalette.colors[0]});
+s1.select("#c-bottom").attr({fill: '#' + newPalette.colors[0]});
+s1.select("#d-left").attr({fill: '#' + newPalette.colors[1]});
+s1.select("#d-right").attr({fill: '#' + newPalette.colors[2]});
+s1.select("#d-bottom").attr({fill: '#'+ newPalette.colors[3]});
+s1.select("#c-top").attr({fill: '#' + newPalette.colors[3]});
+s1.select("#c-left").attr({fill: '#' + newPalette.colors[4]});
+
+var s2 = Snap("#stripe");
+s2.select("#stripe-0").attr({fill: '#' + newPalette.colors[0]});
+s2.select("#stripe-1").attr({fill: '#' + newPalette.colors[1]});
+s2.select("#stripe-2").attr({fill: '#' + newPalette.colors[2]});
+s2.select("#stripe-3").attr({fill: '#' + newPalette.colors[3]});
+s2.select("#stripe-4").attr({fill: '#' + newPalette.colors[4]});
+{% endhighlight %}
