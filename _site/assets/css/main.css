@@ -107,7 +107,7 @@ a.logo{
 	display:block;
 	float:left;
 }
-	.logo img{
+	#dc-logo{
 		margin-top:-1em;
 		margin-right:1em;
 		padding:0.7em;

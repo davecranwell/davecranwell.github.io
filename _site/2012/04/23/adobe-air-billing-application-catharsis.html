@@ -31,17 +31,36 @@
     <svg id="stripe" viewBox="0 0 500 5" version="1.1" x="0px" y="0px"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" preserveAspectRatio="none">
         <g>
-            <path d="M 0 0 L 100 0 L 100 10 L 0 10 Z" fill="#6E554A" id="stripe-1" />
-            <path d="M 100 0 L 200 0 L 200 10 L 100 10 Z" fill="#CC333F" id="stripe-2" />
-            <path d="M 200 0 L 300 0 L 300 10 L 200 10 Z" fill="#D7BA5A" id="stripe-3" />
-            <path d="M 300 0 L 400 0 L 400 10 L 300 10 Z" fill="#2E959F" id="stripe-4" />
-            <path d="M 400 0 L 500 0 L 500 10 L 400 10 Z" fill="#a5cb33" id="stripe-5" />
+            <path d="M 0 0 L 100 0 L 100 10 L 0 10 Z" fill="#6E554A" id="stripe-0" />
+            <path d="M 100 0 L 200 0 L 200 10 L 100 10 Z" fill="#CC333F" id="stripe-1" />
+            <path d="M 200 0 L 300 0 L 300 10 L 200 10 Z" fill="#D7BA5A" id="stripe-2" />
+            <path d="M 300 0 L 400 0 L 400 10 L 300 10 Z" fill="#2E959F" id="stripe-3" />
+            <path d="M 400 0 L 500 0 L 500 10 L 400 10 Z" fill="#a5cb33" id="stripe-4" />
         </g>
     </svg>
     <div class="wrapper">
         <header class="cf" role="banner">
-            <a class="logo" href="/">
-                <img src="/assets/images/dc.svg" alt="" />
+            <a id="logo" class="logo" href="/">
+                <svg id="dc-logo" viewBox="0 0 325 191" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+                    <g id="background">
+                        <path d="M 45 0 L 45 191 L 0 191 L 0 0 L 45 0 Z" fill="#ffffff" id="bd-left" />
+                        <path d="M 0 149 L 156 149 L 156 155 L 120 191 L 0 191 L 0 149 Z" fill="#ffffff" id="bd-bottom" />
+                        <path d="M 111 0 L 121 0 L 156 35 L 156 155 L 120 191 L 111 191 L 111 0 Z" fill="#ffffff" id="bd-right" />
+                        <path d="M 0 44 L 44 44 L 111 44 L 156 44 L 156 35 L 121 0 L 0 0 L 0 45 Z" fill="#ffffff" id="bd-top" />
+                        <path d="M 325 0 L 325 44 L 214 44 L 170 44 L 170 35 L 205 0 L 325 0 Z" fill="#ffffff" id="bc-top" />
+                        <path d="M 215 0 L 215 191 L 206 191 L 170 155 L 170 35 L 205 0 L 215 0 Z" fill="#ffffff" id="bc-left" />
+                        <path d="M 170 149 L 325 149 L 325 191 L 205 191 L 170 156 L 170 149 Z" fill="#ffffff" id="bc-bottom" />
+                    </g>
+                    <g id="foreground">
+                        <path opacity="0.8" d="M 45 0 L 45 191 L 0 191 L 0 0 L 45 0 Z" fill="#6E554A" id="d-left" />
+                        <path opacity="0.8" d="M 0 149 L 156 149 L 156 155 L 120 191 L 0 191 L 0 149 Z" fill="#CC333F" id="d-bottom" />
+                        <path opacity="0.8" d="M 111 0 L 121 0 L 156 35 L 156 155 L 120 191 L 111 191 L 111 0 Z" fill="#D7BA5A" id="d-right" />
+                        <path opacity="0.8" d="M 0 44 L 44 44 L 111 44 L 156 44 L 156 35 L 121 0 L 0 0 L 0 45 Z" fill="#2E959F" id="d-top" />
+                        <path opacity="0.8" d="M 325 0 L 325 44 L 214 44 L 170 44 L 170 35 L 205 0 L 325 0 Z" fill="#CC333F" id="c-top" />
+                        <path opacity="0.8" d="M 215 0 L 215 191 L 206 191 L 170 155 L 170 35 L 205 0 L 215 0 Z" fill="#D66D4E" id="c-left" />
+                        <path opacity="0.8" d="M 170 149 L 325 149 L 325 191 L 205 191 L 170 156 L 170 149 Z" fill="#a5cb33" id="c-bottom" />
+                    </g>
+                </svg>
                 Dave Cranwell
             </a>
  
@@ -94,20 +113,20 @@
 
 
                 
-                <nav role="navigation" class="nav-prevnext" aria-label="Newer or Older posts">
-                    <ul class="cf">
-                        <li class="newer">
-                             
-                                <a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">Newer post</a>
-                            
-                        </li>
-                        <li class="older">
-                             
-                                <a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">Older post</a>
-                            
-                        </li>
-                    </ul>
-                </nav>
+                    <nav role="navigation" class="nav-prevnext" aria-label="Newer or Older posts">
+                        <ul class="cf">
+                            <li class="newer">
+                                 
+                                    <a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">Newer post</a>
+                                
+                            </li>
+                            <li class="older">
+                                 
+                                    <a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">Older post</a>
+                                
+                            </li>
+                        </ul>
+                    </nav>
                 
             </div>
 
@@ -115,32 +134,63 @@
                 <h2 aria-hidden="true">Recent posts</h2>
                 <ul class="posts">
                     
-                        <li><h3><a href="/2013/12/13/new-site-on-jekyll.html">The right tools for the job</a></h3></li>
+                        
+                            <li><h3><a href="/2013/12/15/dabbling-with-svg.html">Dabbling with SVG</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
+                        
+                            <li><h3><a href="/2013/12/13/new-site-on-jekyll.html">The right tools for the job</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
+                        
+                            <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
+                        
+                            <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
+                        
+                            <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
+                        
+                            <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
+                        
+                            <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Text resizing when rotating in iOS</a></h3></li>
+                        
+                            <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
+                        
+                            <li><h3><a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Text resizing when rotating in iOS</a></h3></li>
+                        
+                        
                     
-                        <li><h3><a href="/2011/05/10/pecr-cookies-and-you.html">PECR, cookies and you</a></h3></li>
+                        
+                            <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
+                        
+                        
                     
                 </ul>
             </nav>
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+    <script src="/assets/js/vendor/snap.svg-min.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
         function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
