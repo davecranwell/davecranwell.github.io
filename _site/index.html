@@ -84,43 +84,18 @@
  -->
                 
     <article class="post">
-        <h1>Dabbling with SVG</h1>
-        <p>The &quot;DC&quot; logo top left and the coloured strip across the top are both SVG. Thanks to <a href="http://fireworks.abeall.com">a Fireworks SVG export plugin</a> both were simple to create from Fireworks layered PNGs.</p>
+        <h1>jquery.image-fit-window</h1>
+        <p>I&#39;ve written a small jQuery plugin for image resizing in quite a specific situation. </p>
 
-<p>If you&#39;re not already a convert, the SVG elevator pitch is this: SVG gives the ability to use pure vector images in live sites, where every colour fill, every stroke, shape or group of shapes can be controlled and animated via Javascript and/or CSS. No compression artefacts, no need for retina versions. They&#39;re easily cached, easily compressable on the server side and they&#39;re even written in a human-readable format you can edit by hand.</p>
+<p>On art-focused (or at least image-oriented) websites it&#39;s often necessary for an image be visible in its entirety to be properly appreciated. In cases where an image is rated, or bought based to it&#39;s quality, a visitor may want to see the whole image, without scrolling, without the interuption of a lightbox or modal, yet with the option to view it larger. As websites are often fluid-width and browser dimensions are up to the user, it can be tricky to ensure this image display.</p>
 
-<p>Check this:</p>
+<p>I was inspired by the behaviour of the <a href="http://artsy.net/artwork/shepard-fairey-power-and-glory-iv">artwork display on Artsy.net</a> and this plugin is intended to fulfil a similar role.</p>
 
-<p><img src="/assets/images/dc.svg" width="300" height="300" /></p>
+<p>The plugin helps by reducing the image to fit within the window and gives the user a toggle with which to switch between the &quot;fit&quot; size and the actual size image.</p>
 
-<p>It&#39;s the same image file as in the logo above, at a larger size, with utterly no loss of quality. For solid-colour, cell-shaded or vector based logos and icons etc, it&#39;s a winner in my book.</p>
+<p>You can see an example of it in action here: <a href="http://jsfiddle.net/davecranwell/M5q7C/">http://jsfiddle.net/davecranwell/M5q7C/</a></p>
 
-<p>The top strip is more of the same but in this instance is declared inline. SVG by default likes to scale with a fixed aspect ratio, it isn&#39;t like a raster image where you can mangle its dimensions however you like. However in this case mangling is exactly what we need so it always matches the width of the page. <code>preserveAspectRatio=&quot;none&quot;</code> is the solution. As you can guess from the syntax, is disables the aspect ratio enforcement.</p>
-
-<p>For further reading, Chris Coyer has a <a href="http://css-tricks.com/using-svg/">good starting point</a>. The main caveat being that we&#39;re talking about support for IE9+ only, but as IE8 has been on the naughty step for at least 2 years, we can start crossing it off our browser support lists.</p>
-
-<p><strong>EDIT</strong> I&#39;ve done some playing with <a href="http://snapsvg.io/">SnapSVG</a> and the under-sold <a href="http://www.colourlovers.com/api">colorlovers.com API</a> to rotate colours in the logo and stripe automatically. It won&#39;t do it on first load, but every page thereafter will have the logo and stripe rotated to one of colorlovers top 100 palettes. Try refreshing. Yes, I&#39;m fully aware this is completely pointless!</p>
-
-<p>If you check the source you&#39;ll see each element in the svg has an ID, so changing each element&#39;s properties in Snap is as easy as:</p>
-
-<div class="highlight"><pre><code class="js"><span class="kd">var</span> <span class="nx">newPalette</span> <span class="o">=</span> <span class="nx">yourFunctionThatGetsPaletteAsArray</span><span class="p">();</span>
-
-<span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="nx">Snap</span><span class="p">(</span><span class="s2">&quot;#dc-logo&quot;</span><span class="p">);</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#d-top&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#c-bottom&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#d-left&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#d-right&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#d-bottom&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span><span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#c-top&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">]});</span>
-<span class="nx">s1</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#c-left&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">4</span><span class="p">]});</span>
-
-<span class="kd">var</span> <span class="nx">s2</span> <span class="o">=</span> <span class="nx">Snap</span><span class="p">(</span><span class="s2">&quot;#stripe&quot;</span><span class="p">);</span>
-<span class="nx">s2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#stripe-0&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
-<span class="nx">s2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#stripe-1&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]});</span>
-<span class="nx">s2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#stripe-2&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]});</span>
-<span class="nx">s2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#stripe-3&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">]});</span>
-<span class="nx">s2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;#stripe-4&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">({</span><span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="nx">newPalette</span><span class="p">.</span><span class="nx">colors</span><span class="p">[</span><span class="mi">4</span><span class="p">]});</span>
-</code></pre></div>
+<p><a href="https://github.com/davecranwell/jquery.image-fit-window">Download the plugin from Github</a> and read more information about options and use.</p>
 
     </article>
 
@@ -128,8 +103,8 @@
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             var disqus_shortname = 'davecranwell';
-            var disqus_identifier = '/2013/12/15/dabbling-with-svg';
-            var disqus_title = 'Dabbling with SVG';
+            var disqus_identifier = '/2014/02/13/jquery-image-fit-window';
+            var disqus_title = 'jquery.image-fit-window';
             var disqus_url = 'http://davecranwell.com/index.html';
             (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -145,7 +120,7 @@
         <ul class="cf">
             <li class="newer">&nbsp;</li>
             <li class="older">
-                <a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Older post</a>
+                <a href="/2013/12/13/new-site-on-jekyll.html">Older post</a>
             </li>
         </ul>
     </nav>
@@ -160,6 +135,11 @@
                     
                         
 
+                        
+                        
+                    
+                        
+                            <li><h3><a href="/2013/12/15/dabbling-with-svg.html">Dabbling with SVG</a></h3></li>
                         
                         
                     
@@ -200,11 +180,6 @@
                     
                         
                             <li><h3><a href="/2011/06/29/text-resizing-when-rotating-in-ios.html">Text resizing when rotating in iOS</a></h3></li>
-                        
-                        
-                    
-                        
-                            <li><h3><a href="/2011/05/26/jquery-scroll-parallax-plugin.html">jQuery scroll parallax plugin</a></h3></li>
                         
                         
                     
