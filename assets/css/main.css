@@ -76,7 +76,8 @@ a, a:visited, a:active{
 code{
 	background-color:#f8f8f8;	
 	font-family:monospace;
-	font-size:0.85em;
+	font-size:0.75em;
+	line-height:1.7em;
 	border:0;
 	white-space: nowrap;
 }
