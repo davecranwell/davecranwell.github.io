@@ -84,7 +84,7 @@ grunt.registerTask('prep-export', function(){
 });
 {% endhighlight %}
 
-We create a task to achieve points 2. and 3. using grunt-shell (URL) 
+We create a task to achieve points 2. and 3. using [grunt-shell](https://github.com/sindresorhus/grunt-shell) 
 
 {% highlight javascript %}
 	grunt.initConfig({
