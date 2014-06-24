@@ -6,7 +6,7 @@ image: map.jpg
 
 I recently created a [choropleth map for The Internet Society](http://www.internetsociety.org/map/global-internet-report/) where survey data was used to colour interactive maps. The data had several metrics each represented as a switchable layer.
 
-The map tiles were created with [Tilemill](https://www.mapbox.com/tilemill/), an application solely that purpose.
+The map tiles were created with [Tilemill](https://www.mapbox.com/tilemill/), an application solely for that purpose.
 
 In Tilemill you configure "Projects" where each project comprises a map, some colour definitions, some data, and several layers of information e.g country boundaries, roads, lakes, bus stops etc.
 
