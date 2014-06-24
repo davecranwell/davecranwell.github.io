@@ -46,7 +46,7 @@ There's another hurdle too: Tilemill project files **must** be called `project.m
 
 This is where [Grunt](http://gruntjs.com) comes in. We can automate several processes:
 
-1. Create a duplicate of `project.mml` in which we disable the layers we don't want, called `project-foo.mml`
+1. Create a duplicate of `project.mml` for every layer to be exported, in which we disable all the *other* layers we don't want. Name each duplicate after the layer e.g `project-foo.mml`
 1. Temporarily backup `project.mml` to `project.mml.bak`, rename `project-foo.mml` to `project.mml` and use the CLI to run an export of layer "foo" only
 1. Restore `project.mml`
 
