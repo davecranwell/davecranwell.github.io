@@ -113,7 +113,7 @@ We create a task to achieve points 2. and 3. using [grunt-shell](https://github.
 
     grunt.registerTask('export-maps', [
         'shell:backupproject',
-        'shell:exportlayer1',
+        'shell:exportfoo',
         // ...
         'shell:restoreproject',
     ]);
