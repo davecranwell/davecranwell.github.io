@@ -44,7 +44,7 @@ Furthermore each Tilemill project is saved as a JSON file `project.mml`. Within 
 
 There's another hurdle too: Tilemill project files **must** be called `project.mml`. You can't even pass another .mml file as an arg to the CLI.
 
-This is where Grunt comes in. We can automate several processes:
+This is where [Grunt](http://gruntjs.com) comes in. We can automate several processes:
 
 1. Create a duplicate of `project.mml` in which we disable the layers we don't want, called `project-foo.mml`
 1. Temporarily backup `project.mml` to `project.mml.bak`, rename `project-foo.mml` to `project.mml` and use the CLI to run an export of layer "foo" only
