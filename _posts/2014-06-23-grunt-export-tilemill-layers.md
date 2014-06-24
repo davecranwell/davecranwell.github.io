@@ -20,7 +20,7 @@ Now chuck in the inevitability that the client corrects the data several times. 
 
 <h3>An automated solution</h3>
 
-It turns out that Tilemill is actually a Backbone.js web application running on a Node.js server distributed with the app. The main executable in the app is in fact a javascript file which Mapbox have wrapped with a [command-line interface](https://www.mapbox.com/tilemill/docs/manual/exporting/). 
+It turns out that Tilemill is actually a [Backbone.js](http://backbonejs.org/) web application running on a [Node.js](http://nodejs.org) server distributed with the app. The main executable in the app is in fact a javascript file which Mapbox have wrapped with a [command-line interface](https://www.mapbox.com/tilemill/docs/manual/exporting/). 
 
 Furthermore each Tilemill project is saved as a JSON file `project.mml`. Within it an array contains each of your layers, with an ID, a status and more.
 
