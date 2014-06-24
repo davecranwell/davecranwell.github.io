@@ -86,6 +86,8 @@ grunt.registerTask('prep-export', function(){
 
 We create a task to achieve points 2. and 3. using [grunt-shell](https://github.com/sindresorhus/grunt-shell) 
 
+(nb: your path to the Tilmill main file `/Applications/TileMill.app/Contents/Resources/index.js` may differ)
+
 {% highlight javascript %}
 	grunt.initConfig({
 		shell: {
