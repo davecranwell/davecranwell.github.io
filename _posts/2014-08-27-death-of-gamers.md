@@ -15,7 +15,7 @@ And lets be clear, the "gamers" Dan is refers to are traditionally male. Men oft
 
 When meeting in person the severity of this combative banter varies enormously, obviously not everyone is actually offensive and crude. However over the internet where dominance is measured on a global scale, you have to up the ante. The joke has to be cruder, the offense greater, all the while tinged with the distrust that comes with anonymity. It's a volatile, highly charged social dynamic.
 
-The trouble is this dynamic doesn't work in unfamiliar company. I've lost count of the times I've witnessed a girlfriend/wife rebuke her male partner due to his bonding banter with mates: the joke that goes too far, or is too soon, too crude, or at her expense. It's this self-censorship that I suspect is the backdrop to the hate. The fear that to share toys with unfamiliar people requires you to behave differently too. 
+The trouble is this dynamic doesn't work in unfamiliar company. I've lost count of the times I've witnessed a girlfriend/wife rebuke her male partner due to his bonding banter with mates: the joke that goes too far, or is too soon, too crude, or at her expense. It's this perceived need for self-censorship that I suspect is the backdrop to the hate. The fear that to share toys with unfamiliar people requires you to behave differently too. 
 
 It's not the loss of identity that upsets these gamers, it's having to change an identity they've spent decades positioning in a social pecking order. Outright loss could probably be handled easier. 
 
