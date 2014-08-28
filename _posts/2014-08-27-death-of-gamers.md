@@ -3,7 +3,7 @@ layout: post
 title: Death of gamers or death of male bonding?
 ---
 
-@dangolding [recently posted an interesting view on the recent debacle around mysoginy/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique, and this loss of identity cuts deep.
+@dangolding [recently posted an interesting view on the recent debacle around mysogyny/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique, and this loss of identity cuts deep.
 
 Loss of identity is a powerful force common to emotional disorders like depression and low self esteem, but I don't think it's the whole story.
 
