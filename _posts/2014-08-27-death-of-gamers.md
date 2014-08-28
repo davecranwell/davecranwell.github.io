@@ -3,7 +3,7 @@ layout: post
 title: Death of gamers or death of male bonding?
 ---
 
-@dangolding [recently posted an interesting view on the recent debacle around mysoginy/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique. They're no longer identifyable as part of a specific social group of "Gamers", and this loss of identity cuts deep.
+@dangolding [recently posted an interesting view on the recent debacle around mysoginy/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique, and this loss of identity cuts deep.
 
 Loss of identity is a powerful force common to emotional disorders like depression and low self esteem, but I don't think it's the whole story.
 
@@ -11,7 +11,7 @@ Dan says *"They have astutely, and correctly identified what is going on here. T
 
 Where before gamers could freely communicate with each other using a language suitable within their group, now that language has to be neutered, controlled, tailored to a new kind of audience. It's like when inexperienced employees send emails to a client full of colloquilisms or inappropriate flippancy. The change in mind-set required to send a *professional* email can feel like a loss of identity, a cowardly betrayal of the self you've grown to love.
 
-And lets be clear, the "gamers" Dan is refers to are traditionally male. Men often bond over mutually appreciated crudeness, "ribbing", jokes at someone else's expense, a carefully dropped F or C-bomb to establish dominance etc. It's a verbal "sizing up" has been present for millenia but doesn't stop after the bond is made. It becomes a means of re-establishing connection each time you meet up. It becomes familiar, predictable, enjoyable. 
+And lets be clear, the "gamers" Dan is refers to are traditionally male. Men often bond over mutually appreciated crudeness, "ribbing", jokes at someone else's expense, a carefully dropped F or C-bomb to establish dominance etc. This verbal "sizing up" has been present for millenia and is practically heriditary, but it doesn't stop after the bond is made. It becomes a means of re-establishing connection each time you meet up. It becomes familiar, predictable, enjoyable. 
 
 When meeting in person the severity of this combative banter varies enormously, obviously not everyone is actually offensive and crude. However over the internet where dominance is measured on a global scale, you have to up the ante. The joke has to be cruder, the offense greater, all the while tinged with the distrust that comes with anonymity. It's a volatile, highly charged social dynamic.
 
