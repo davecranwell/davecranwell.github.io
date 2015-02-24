@@ -1,21 +1,64 @@
 ---
 layout: post
-title: Death of gamers or death of the internet pecking order?
+title: "Animating CSS height to auto"
 ---
 
-@dangolding [recently posted an interesting view on the recent debacle around mysogyny/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique, and this loss of identity cuts deep.
+A common problem with responsive design is the need to animate with CSS an element who's dimensions are unclear. It's straight forward to set `height:0px` in one rule, `height:100px` in another, add some `transition: all 1s` and Bob's your mother's brother, but what if the height of your element varies per breakpoint? What if you can't control the content of the element?
 
-Loss of identity is a powerful force common to emotional disorders like depression and low self esteem, but I don't think it's the whole story.
+css-tricks.com has had a few snippets/editorials on this, but their solutions tend to expect the animation to be done with jQuery.animate(). What if you want to do it with CSS? My quick and dirty jQuery solution is as follows:
 
-Dan says *"They have astutely, and correctly identified what is going on here. Their toys are being taken away, and their treehouses are being boarded up"*, but I'm not sure it's the toys being taken that causes the upset, it's toys being **shared**. Shared with people outside their established, familiar, social group.
+Basically you've got an element `.my-element` on which some javascript toggles the class `.open`. Without that class, the element is closed, or invisible, with zero height. With `.open` added, the element shows its contents at whatever height is required.
 
-Where before gamers could freely communicate with each other using a language suitable within their group, now that language has to be neutered, controlled, tailored to a new kind of audience. It's like when an inexperienced employee at work sends an email to a client full of colloquialisms or inappropriate flippancy. The change in mind-set required to send a *professional* email can feel like a loss of identity, a cowardly betrayal of the self you've grown to love.
+{% highlight javascript %}
+    function autoHeightElement(elem){
+        var $self = $(elem);
+        var $openCSS = $('<style></style>').appendTo('head');
 
-And lets be clear, the "gamers" Dan is refers to are traditionally male. Men often bond over mutually appreciated crudeness, "ribbing", jokes at someone else's expense, a carefully dropped F or C-bomb to establish dominance etc. This verbal "sizing up" has been present for millenia and is practically heriditary, but it doesn't stop after the bond is made. It becomes a means of re-establishing connection each time you meet up. It becomes familiar, predictable, enjoyable and is regularly reinforced.
+        function setSize(elem){
+            elem.removeClass('ready');
+            $openCSS.html(elem + '.open{height:' + elem.height() + 'px}');
+            elem.addClass('ready');
+        }
 
-When meeting in person the severity of this combative banter varies enormously, obviously not everyone is actually offensive and crude. However over the internet where dominance is measured on a global scale, you have to up the ante. Your impact has to be immediately and powerful. The joke has to be cruder and the offense greater, all the while tinged with the distrust that comes with anonymity. It's a volatile, highly charged social dynamic..
+        $(window).resize(function(){
+            setSize(elem);
+        });
 
-The trouble is this dynamic doesn't work in unfamiliar company. I've lost count of the times I've experienced a girlfriend/wife rebuke her male partner due to his bonding banter with mates: the joke that goes too far, or is too soon, too crude, or at her expense. It's this perceived need for self-censorship that I suspect is the backdrop to the hate. The fear that to share toys with unfamiliar people requires you to behave differently too. 
+        setSize(elem)
+    });
 
-It's not the loss of identity that upsets these gamers, it's having to change an identity they've spent decades positioning in a social pecking order. Outright loss could probably be handled easier. 
+    autoHeightElement('.my-element');
 
+    $('.my-element').click(function(){
+        $(this).toggleClass('open');
+    });
+
+{% endhighlight %}
+
+This requires the CSS:
+
+{% highlight css %}
+    .js .my-element{
+        position:absolute;
+        width:100%;
+        z-index:-1;
+        top:-5000px;
+    }
+    .js .my-element.ready{
+        height:0;
+        z-index:80;
+        position:relative;
+        width:auto;
+        top:auto;
+    }
+{% endhighlight %}
+
+Essentially as the page loads, and provided JS is enabled, the element in question is position absolutely off-screen, to avoid it's position affecting the rest of the page content.
+
+It's height is then calculated, and CSS rule is added to the head to set the `.open` version of that element to the specific height. 
+
+Once calculated, the element is set to be `.ready`, a class which can be used to restore the element to whatever position or properties it ought to have in it's closed state.
+
+As the page is resized and the content of the element reflows and affects its dimensions, `setSize()` reruns, recalculating the new height and altering the injected CSS rule in the `head`.
+
+Of couse this doesn't cater for resizing the element while it's being displayed, but you're half way there at least.
