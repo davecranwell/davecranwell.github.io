@@ -78,7 +78,7 @@ a, a:visited, a:active{
 	margin-right:-1em;
 }
 .listing li{
-	padding:0 1em 1em 1em;
+	padding:1em;
 }
 .listing li:hover{
 	background-color:#FEFEFE;
