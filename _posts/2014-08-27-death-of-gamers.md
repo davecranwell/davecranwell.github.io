@@ -55,10 +55,10 @@ This requires the CSS:
 
 Essentially as the page loads, and provided JS is enabled, the element in question is position absolutely off-screen, to avoid it's position affecting the rest of the page content.
 
-It's height is then calculated, and CSS rule is added to the head to set the `.open` version of that element to the specific height. 
+Its height is calculated and a CSS rule is added to the head to use that calculated height for the `.open` version of that element. 
 
 Once calculated, the element is set to be `.ready`, a class which can be used to restore the element to whatever position or properties it ought to have in it's closed state.
 
-As the page is resized and the content of the element reflows and affects its dimensions, `setSize()` reruns, recalculating the new height and altering the injected CSS rule in the `head`.
+As the page is resized and the contents of the element reflow and affects its dimensions, `setSize()` reruns, recalculating the new height and altering the injected CSS rule in the `head`.
 
 Of couse this doesn't cater for resizing the element while it's being displayed, but you're half way there at least.
