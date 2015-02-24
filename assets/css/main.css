@@ -69,7 +69,7 @@ a, a:visited, a:active{
 
 .listing, .listing li{
 	margin:0;
-	padding:0;
+	padding:0 0 1em 0;
 	list-style-type:none;
 }
 
