@@ -10,47 +10,47 @@ css-tricks.com has had a few snippets/editorials on this, but their solutions te
 Basically you've got an element `.my-element` on which some javascript toggles the class `.open`. Without that class, the element is closed, or invisible, with zero height. With `.open` added, the element shows its contents at whatever height is required.
 
 {% highlight javascript %}
-    function autoHeightElement(elem){
-        var $self = $(elem);
-        var $openCSS = $('<style></style>').appendTo('head');
+function autoHeightElement(elem){
+    var $self = $(elem);
+    var $openCSS = $('<style></style>').appendTo('head');
 
-        function setSize(elem){
-            elem.removeClass('ready');
-            $openCSS.html(elem + '.open{height:' + elem.height() + 'px}');
-            elem.addClass('ready');
-        }
+    function setSize(elem){
+        elem.removeClass('ready');
+        $openCSS.html(elem + '.open{height:' + elem.height() + 'px}');
+        elem.addClass('ready');
+    }
 
-        $(window).resize(function(){
-            setSize(elem);
-        });
-
-        setSize(elem)
+    $(window).resize(function(){
+        setSize(elem);
     });
 
-    autoHeightElement('.my-element');
+    setSize(elem)
+});
 
-    $('.my-element').click(function(){
-        $(this).toggleClass('open');
-    });
+autoHeightElement('.my-element');
+
+$('.my-element').click(function(){
+    $(this).toggleClass('open');
+});
 
 {% endhighlight %}
 
 This requires the CSS:
 
 {% highlight css %}
-    .js .my-element{
-        position:absolute;
-        width:100%;
-        z-index:-1;
-        top:-5000px;
-    }
-    .js .my-element.ready{
-        height:0;
-        z-index:80;
-        position:relative;
-        width:auto;
-        top:auto;
-    }
+.js .my-element{
+    position:absolute;
+    width:100%;
+    z-index:-1;
+    top:-5000px;
+}
+.js .my-element.ready{
+    height:0;
+    z-index:80;
+    position:relative;
+    width:auto;
+    top:auto;
+}
 {% endhighlight %}
 
 Essentially as the page loads, and provided JS is enabled, the element in question is position absolutely off-screen, to avoid it's position affecting the rest of the page content.
