@@ -73,6 +73,24 @@ a, a:visited, a:active{
 	list-style-type:none;
 }
 
+.listing{
+	margin-left:-1em;
+	margin-right:-1em;
+}
+.listing li{
+	padding:0 1em 1em 1em;
+}
+.listing li:hover{
+	background-color:#FEFEFE;
+}
+.listing h2{
+	margin:0;
+	color:inherit;
+}
+.listing .content{
+	color:#444;
+}
+
 code{
 	background-color:#f8f8f8;	
 	font-family:monospace;
