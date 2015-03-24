@@ -12,7 +12,9 @@ The trouble isn't that wheel-reinvention occurs, it's that so many of us feel co
 
 My suspicion is that what many of the authors of these anxiety posts don't explain, is that they follow their peers too avidly. In answering _"How do you keep up?"_ I've seen suggestions of the best people/accounts/feeds to follow as a way of filtering the noise. Very rarely have I see this question answered with my answer: _"Why do you have to keep up?"_.
 
-Imposter Syndrome is what I suffer from most. _"I can't justify being here, I'm replaceable, just look at all these over-achievers around me! I know, I'll learn EVERYTHING to make myself indispensible!"_
+Part of keeping up with tech is picking your battles. One of the more reasonable worries as an FE developer concerns changing job. Many of the jobs posted these days mention specific frameworks. If you don't know that framework and your employer doesn't have time or inclination to let you learn it, how can you leave? You want to leave because you want to experience the new and shiney, but you can't find time to learn that thing which qualifies you for that dream job - it's like you're held hostage by your employer!
+
+Imposter Syndrome is what I suffer from most. _"I can't justify being here, I'm replaceable, just look at all these over-achievers around me! I know, I'll learn EVERYTHING to make myself indispensible!"_.
 
 Twitter is to mostly to blame for this. I keep an eye on [Hacker News](https://news.ycombinator.com/news), [A List Apart](A List Apart), [Codrops](http://tympanus.net/codrops/) et al, but the real problem is Twitter. I can't control what sites choose to write about, but I've **chosen** to follow those Twitter accounts and all they do is make my own achievements feel reduced.
 
