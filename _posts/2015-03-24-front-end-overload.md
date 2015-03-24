@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 I've been feeling the pressure recently. Not pressure to get the project finished or to perform at work, rather the pressure to be up to date.
