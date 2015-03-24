@@ -2,7 +2,7 @@
 published: true
 ---
 
-I've been feeling the pressure recently. Not pressure to get the project finished or to perform at work, rather the pressure to be up to date.
+I've been feeling the pressure recently. Not pressure to get the project finished, rather the pressure to be up to date.
 
 I'm not alone, Googling [yields](http://alistapart.com/blog/post/overwhelmed-by-code) [several](http://www.sitepoint.com/not-get-overwhelmed-web-developer/) [prominent](http://modernweb.com/2014/03/31/paralyzed-by-choice-in-front-end-development/) [posts](https://news.ycombinator.com/item?id=7169299) on the topic, including that last one which takes an unexpected turn into a brutally revealing and clearly very knowledgeable porn analogy.
 
