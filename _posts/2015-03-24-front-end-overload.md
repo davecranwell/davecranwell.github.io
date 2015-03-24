@@ -12,9 +12,11 @@ The trouble isn't that wheel-reinvention occurs, it's that so many of us feel co
 
 My suspicion is that what many of the authors of these anxiety posts don't explain, is that they follow their peers too avidly. In answering _"How do you keep up?"_ I've seen suggestions of the best people/accounts/feeds to follow as a way of filtering the noise. Very rarely have I see this question answered with my answer: _"Why do you have to keep up?"_.
 
-Imposter Syndrome which I mentioned before is, I think, the disorder I suffer from. _"I can't justify being here, I'm replaceable, just look at all these over-achievers around me! I know, I'll learn EVERYTHING to make myself indispensible!"_
+Imposter Syndrome is what I suffer from most. _"I can't justify being here, I'm replaceable, just look at all these over-achievers around me! I know, I'll learn EVERYTHING to make myself indispensible!"_
 
+Twitter is to mostly to blame for this. I keep an eye on [Hacker News](https://news.ycombinator.com/news), [A List Apart](A List Apart), [Codrops](http://tympanus.net/codrops/) et al, but the real problem is Twitter. I can't control what sites choose to write about, but I've **chosen** to follow those Twitter accounts and all they do is make my own achievements feel reduced.
 
+Here's an idea: if you're browsing Twitter and you notice anxiety creeping up, chest tightening, the dread of discovering Yet Another Framework you don't know: unfollow it. Ain't nobody got time for that shit. You've only got one life, you don't need to be feeling constantly up tight and underachieving.
 
 
 
