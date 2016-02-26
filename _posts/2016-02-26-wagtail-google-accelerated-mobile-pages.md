@@ -29,6 +29,8 @@ class NewsPage(RoutablePageMixin, BasePage, Page):
 
 {% endhighlight %}
 
+You could of course use the `amp()` method to switch out the `news_page.html` template for a `news_page_amp.html`. It depends how complicated your templates are and you could end up maintaining twice as many templates.
+
 ## 2. Set a global context var to indicate AMP status
 
 You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I can switch the rendering of any part of the page.
