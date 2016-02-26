@@ -9,7 +9,9 @@
     <title>Text resizing when rotating in iOS | Dave Cranwell</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
+    <link rel="author" href="https://plus.google.com/+DaveCranwell/">
+    
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700|Bree+Serif" />
     <link rel="stylesheet" href="/assets/css/normalize.css" />
     <link rel="stylesheet" href="/assets/css/syntax.css" />
@@ -76,7 +78,7 @@
             <nav class="nav-networks" role="navigation" aria-label="Networks">
                 <h2 aria-hidden="true">Networks</h2>
                 <ul>
-                    <li><a href="http://twitter.com/davecranwel">Twitter</a></li>
+                    <li><a href="http://twitter.com/davecranwell">Twitter</a></li>
                     <li><a href="http://github.com/davecranwell">Github</a></li>
                     <li><a href="http://www.linkedin.com/in/davecranwell">Linkedin</a></li>
                 </ul>
@@ -85,23 +87,14 @@
 
         <div class="site cf">
             <div role="main" class="main">
-                <!-- <div class="social">
-                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="davecranwell">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </div>
- -->
                 <article class="post">
     <h1>Text resizing when rotating in iOS</h1>
-    <!--<p class="meta">29 Jun 2011</p>-->
 
     <p>Anyone writing media queries for iPhone/mobile versions of their websites will have encountered this oddity: You load the page on the device and everything looks normal and to-scale. You then rotate the phone 90 degrees and suddenly some of the text is much larger while other areas of text remain as they were.</p><p>I've found the solution to this online so this post is really only a bump for justice, I didn't research this myself. The solution is:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nt">html</span><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">html</span><span class="p">{</span>
     <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">text</span><span class="o">-</span><span class="k">size</span><span class="o">-</span><span class="n">adjust</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Simple, but rather unsatisfying. The one caveat is that this should really only be applied within a @media query targetting the minority, not the majority of your users. Bearing in mind that people use Webkit on <em>desktops</em> too, if applied too generally this rule will prevent anyone on a desktop resizing their text. I'd suggest this only be used within a @media query targetting iOS.</p><p>References:<br />http://www.liquidx.net/blog/2009/09/30/iphone-safari-font-size-changes-on-rotation/<br />http://stackoverflow.com/questions/912681/preventing-iphone-scaling-when-rotated</p>
 
@@ -144,6 +137,14 @@
                 <h2 aria-hidden="true">Recent posts</h2>
                 <ul class="posts">
                     
+                        <li><h3><a href="/2016/02/26/wagtail-google-accelerated-mobile-pages.html">Tips for Google Accelerated Mobile Pages in Wagtail</a></h3></li>
+                    
+                        <li><h3><a href="/2015/03/24/front-end-overload.html">Front End Overload</a></h3></li>
+                    
+                        <li><h3><a href="/2015/02/24/animate-css-auto-height.html">Animating CSS height to auto</a></h3></li>
+                    
+                        <li><h3><a href="/2014/08/27/death-of-gamers.html">Death of gamers or death of the internet pecking order?</a></h3></li>
+                    
                         <li><h3><a href="/2014/06/23/grunt-export-tilemill-layers.html">Using Grunt.js to automate export of Tilemill layers</a></h3></li>
                     
                         <li><h3><a href="/2014/02/13/jquery-image-fit-window.html">jquery.image-fit-window</a></h3></li>
@@ -155,14 +156,6 @@
                         <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
                     
                         <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
-                    
-                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
-                    
-                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
                     
                 </ul>
             </nav>

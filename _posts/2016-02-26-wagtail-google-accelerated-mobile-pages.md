@@ -3,7 +3,7 @@ layout: post
 title: "Tips for Google Accelerated Mobile Pages in Wagtail"
 ---
 
-## Use `RoutablePageMixin`
+## 1. Use `RoutablePageMixin`
 
 Before we can serve a Wagtail AMP we need to work out how Google is to locate each page's AMP version. The AMP spec uses a `<link rel="amphtml" ... />` tag to describe where a vanilla page's AMP equivalent can be found. The simplest option is to make it available at http://domain.com/yourpage/amp/.
 
@@ -28,36 +28,44 @@ This can be done like so:
 
 {% endhighlight %}
 
-## Set a global context var to indicate amp status
+## 2. Set a global context var to indicate AMP status
 
 You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I would normally switch between `<img>` and `<amp-img></amp-img>`. Indeed I can switch off all the parts of the page that shouldn't be part of the AMP version.
 
 I'm also setting `context['base_template'] = 'amp_base.html'`. This allows my `news_page.html` template to start by extending the right base template. Any django template developer will usually extend from a `base.html` (or similar) and this means I can use the following to switch to the AMP-specific version:
 
-{% highlight django %}{% extends base_template|default:"base.html" %}{% highlight %}
+{% highlight django %}
+{% raw %}{% extends base_template|default:"base.html" %}{% endraw %}
+{% endhighlight %}
 
-## Have a separate AMP-specific base template
+## 3. Have a separate AMP-specific base template
 
 You'll want this to cut out the unnecessary furniture in your pages. AMP pages are meant to be lean and mean. Any Javascript you use has to be _very_ well thought out and arguably you should try to avoid it completely, so your `amp_base.html` should probably start by removing all that jQuery you've loaded at the bottom. Similarly if you've got "sidebars" or "footers" containing ancillary content, you probably don't want that either.
 
-If your `base.html` is _really_ basic, you could always use that `is_amp` context variable to toggle this unnecessary stuff and avoid separate templates altogether. That could turn into a quagmire of `{% if %}` tags over time.
+If your `base.html` is _really_ basic, you could always use that `is_amp` context variable to toggle this unnecessary stuff and avoid separate templates altogether. That could turn into a quagmire of `{% raw %}{% if %}{% endraw %}` tags over time.
 
-## Abstract your images
+## 4. Abstract your images
 
-The AMP spec requires you to replace all your vanilla, self-closing `<img>` tags with `<amp-img></amp-img>` ones. The idea of AMP is to create _svelte_, lean pages so you should probably start by questioning whether that image is necessary at all. However most of the images you will want to include come from Wagtails `{% image %}` tag.
+The AMP spec requires you to replace all your vanilla, self-closing `<img>` tags with `<amp-img></amp-img>` ones. The idea of AMP is to create _svelte_, lean pages so you should probably start by questioning whether that image is necessary at all. However most of the images you will want to include come from Wagtails `{% raw %}{% image %}{% endraw %}` tag.
 
-The `{% image %}` tag hides away the implementation of the actual `<img>` element, so you'll want to start by using `{% image as foo %}` a lot more. This means you can output an `<img>` manually e.g
+The `{% raw %}{% image %}{% endraw %}` tag hides away the implementation of the actual `<img>` element, so you'll want to start by using `{% raw %}{% image as foo %}{% endraw %}` a lot more. This means you can output an `<img>` manually e.g
 
 {% highlight django %}
-    {% image foo fill-123x456 as bar %}
-    <img src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}" />
+{% raw %}{% image foo fill-123x456 as bar %}{% endraw %}
+<img src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}" />
 {% endhighlight %}
 
 And of course then it's trivial to change `<img>` for `<amp-img></amp-img>`. With the presence of the `is_amp` context var, you can switch between the two.
 
-I'd perhaps suggest you use a single `{% include %}` template for all images you want to display in your AMP versions. That way, there's only one place where `<img>` and `<amp-img></amp-img>` are switched.
+I'd perhaps suggest you use a single `{% raw %}{% include %}{% endraw %}` template for all images you want to display in your AMP versions. That way, there's only one place where `<img>` and `<amp-img></amp-img>` are switched.
 
-## Componentise your CSS
+## 5. ...and declare them as "responsive" whenever necessary
+
+I kept on missing this bit of documentation: https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image which in this case doesn't mean "responsive" as in https://responsiveimages.org/ but responsive as in they resize and aren't fixed.
+
+Add `layout="responsive"` to your `<amp-img></amp-img>` tags whenever your image is meant to scale to fit the screen (as they are likely to, being a responsible developer :P).
+
+## 6. Componentise your CSS
 
 AMP requires you to inline all your CSS at the top of the file (not as `style` attributes). If you've got a monolith CSS file, this is going to be tricky. There is software out there which automatically works out what rules are actually used on a page, but I'm yet to find one that does so dynamically and efficiently.
 
@@ -66,45 +74,45 @@ If such a tool were run offline, you'd have a hard time planning for the  option
 This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/theory such as BEM, SMACSS, or the general paradigms suggested by Patternlab.io. Adopting these is likely to result in your main CSS file containing something like this (SASS) example:
 
 {% highlight sass %}
-    @import 'variables';
-    @import 'grid';
-    @import 'mixins';
+@import 'variables';
+@import 'grid';
+@import 'mixins';
 
-    // Third party plugins
-    @import 'vendor/normalize';
+// Third party plugins
+@import 'vendor/normalize';
 
-    // Core: head/footer, things not needed to be reusable
-    @import 'core/fonts';
-    @import 'core/global-elements';
-    @import 'core/typography';
-    @import 'core/header';
-    @import 'core/footer';
-    @import 'core/main';
-    @import 'core/primary-nav';
-    @import 'core/mobile-nav';
-    @import 'core/inputs';
+// Core: head/footer, things not needed to be reusable
+@import 'core/fonts';
+@import 'core/global-elements';
+@import 'core/typography';
+@import 'core/header';
+@import 'core/footer';
+@import 'core/main';
+@import 'core/primary-nav';
+@import 'core/mobile-nav';
+@import 'core/inputs';
 
-    // Components: Individual, discrete pieces of UI
-    @import 'components/wagtail-styles';
-    @import 'components/icons';
-    @import 'components/buttons';
-    @import 'components/cards';
-    @import 'components/tables';
-    @import 'components/sharing';
-    @import 'components/panels';
-    @import 'components/tabs';
-    @import 'components/meta-bar';
+// Components: Individual, discrete pieces of UI
+@import 'components/wagtail-styles';
+@import 'components/icons';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/tables';
+@import 'components/sharing';
+@import 'components/panels';
+@import 'components/tabs';
+@import 'components/meta-bar';
 
-    // Organisisms: Groups of components
-    @import 'organisms/heros';
-    @import 'organisms/streamfield';
-    @import 'organisms/listings';
-    @import 'organisms/tab-bar';
-    @import 'organisms/forms';
-    @import 'organisms/pagination';
+// Organisisms: Groups of components
+@import 'organisms/heros';
+@import 'organisms/streamfield';
+@import 'organisms/listings';
+@import 'organisms/tab-bar';
+@import 'organisms/forms';
+@import 'organisms/pagination';
 
-    // Templates: groups of organisms & components
-    @import 'templates/article';
+// Templates: groups of organisms & components
+@import 'templates/article';
 {% endhighlight %}
 
 Such a breakdown makes it far easier to create a `main-amp.css` alternate file or similar, in which you can include only the bits really needed by your AMP pages.

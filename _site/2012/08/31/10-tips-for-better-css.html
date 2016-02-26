@@ -9,7 +9,9 @@
     <title>10 tips for better css | Dave Cranwell</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
+    <link rel="author" href="https://plus.google.com/+DaveCranwell/">
+    
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700|Bree+Serif" />
     <link rel="stylesheet" href="/assets/css/normalize.css" />
     <link rel="stylesheet" href="/assets/css/syntax.css" />
@@ -76,7 +78,7 @@
             <nav class="nav-networks" role="navigation" aria-label="Networks">
                 <h2 aria-hidden="true">Networks</h2>
                 <ul>
-                    <li><a href="http://twitter.com/davecranwel">Twitter</a></li>
+                    <li><a href="http://twitter.com/davecranwell">Twitter</a></li>
                     <li><a href="http://github.com/davecranwell">Github</a></li>
                     <li><a href="http://www.linkedin.com/in/davecranwell">Linkedin</a></li>
                 </ul>
@@ -85,16 +87,8 @@
 
         <div class="site cf">
             <div role="main" class="main">
-                <!-- <div class="social">
-                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="davecranwell">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </div>
- -->
                 <article class="post">
     <h1>10 tips for better css</h1>
-    <!--<p class="meta">31 Aug 2012</p>-->
 
     <p>CSS can be taken for granted. The gap between plain-ol-css and good css is vast but it's often considered the kind of technology that anyone should be able to do and in worst case scenarios doesn't even receive much budget.</p>
 
@@ -138,17 +132,15 @@
 
 <p>Developers find themselves writing familiar patterns in CSS. For example overriding the colour of a link within a <code>ul</code>:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nt">ul</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">ul</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
   <span class="k">color</span><span class="o">:</span><span class="nb">red</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>That selector is 3 points (1 point each element). Now imagine:</p>
 
-<div class="highlight"><pre><code class="css"><span class="nc">.listing</span> <span class="nt">li</span> <span class="nt">a</span><span class="nc">.blocklink</span><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.listing</span> <span class="nt">li</span> <span class="nt">a</span><span class="nc">.blocklink</span><span class="p">{</span>
   <span class="k">color</span><span class="o">:</span><span class="nb">red</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>The selector has with the addition of two seemingly innocuous classes suddenly increased to 22 points (2 classes, 2 elements). This is enough in my experience to start making overriding tricky.</p>
 
@@ -166,19 +158,18 @@
 
 <p>Start by creating classes which apply the most common features of the box - perhaps the border. Then go a layer deeper into the onion but always move to the next <strong>least</strong> specific thing. Perhaps the background colour or the heading size. You'll end up with several potentially unconnected classes applied to a single element e.g:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h2&gt;</span>Heading<span class="nt">&lt;/h2&gt;</span>
   <span class="nt">&lt;ul&gt;</span>
     <span class="nt">&lt;li&gt;</span>Items<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <p>Remember that CSS is a cascade and things inherit properties. You don't want to write a class for every conceivable permutation of style, you want to <em>re-use </em> the classes in different places frequently. But how do you know what deserves a new class and what should use an existing one? It's best to think from most to least common. If there are 5 listing blocks which look nearly identical, of which 3 are completely identical, your first styles should create a "default" look for the 3 most common. Next make override classes for the remaining 2 that tweak only the individual properties which differ.</p>
 
 <p>e.g if our previous <code>.bordered.headed.listing</code> block were to have a derivative version with an inverted background colour you might write:</p>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;style&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style&gt;</span>
 <span class="nc">.inverse</span><span class="p">{</span>
   <span class="k">background-color</span><span class="o">:</span><span class="nb">black</span><span class="p">;</span>
   <span class="k">color</span><span class="o">:</span><span class="nb">white</span><span class="p">;</span>
@@ -189,23 +180,20 @@
   <span class="nt">&lt;ul&gt;</span>
     <span class="nt">&lt;li&gt;</span>Items<span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <h3>4. Namespace your classes</h3>
 
 <p>Use a hyphen in class names to indicate derivative versions of a default. This makes it easier for other developers to locate similar styles. e.g <code>.teaser-vertical</code>, <code>.teaser-horizontal</code> or <code>.button-primary</code>, <code>.button-secondary</code>. This would seem to go against my previous advice on onion skinning, so ask yourself: would this class ever be used outside this situation? Could this class confuse someone in future? For example "Primary" is a loaded term used by developers and designers for different reasons and would be likely to cause such confusion e.g:
 
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing primary&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing primary&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
 
 
 What exactly is <code>.primary</code> doing above? Is it perhaps adding the primary <em>colour</em> scheme? Or is it just the primary version of the bordered list?
 
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing-primary&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bordered headed listing-primary&quot;</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
 
 
 The above completely changes the understanding of your code. It's clearly a "primary kind of listing" and could perhaps be found in your CSS alongside <code>.listing-secondary</code> and <code>.listing-tertiary</code>.
@@ -250,7 +238,7 @@ Always put the common part of the name first e.g: <code>.button-primary</code>  
 
 <p>Try adding a table of contents at the top of your file:</p>
 
-<div class="highlight"><pre><code class="css"><span class="c">/******* My CSS file ********/</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/******* My CSS file ********/</span>
 <span class="nt">Contents</span>
 <span class="nt">-</span> <span class="nt">HTML</span> <span class="nt">reset</span>
 <span class="nt">-</span> <span class="nt">Common</span> <span class="nt">HTML</span> <span class="nt">elements</span>
@@ -261,8 +249,7 @@ Always put the common part of the name first e.g: <code>.button-primary</code>  
 <span class="nt">-</span> <span class="nt">Z-indexes</span>
 <span class="nt">-</span> <span class="nt">Media</span> <span class="nt">queries</span>
 <span class="nt">-</span> <span class="nt">Print</span> <span class="nt">styles</span>
-<span class="c">/*******************************/</span>
-</code></pre></div>
+<span class="c">/*******************************/</span></code></pre></figure>
 
 <p>Anything that helps others understand your file quicker reduces the chance they&#39;ll mess it up or reduce the quality of your code due to being unable to find something.</p>
 
@@ -291,26 +278,24 @@ Boilerplate - <a href="http://html5boilerplate.com/">HTML5boilerplate.com</a> is
 Dynamic CSS - <a href="http://lesscss.org/">LESSCSS</a> and <a href="http://sass-lang.com/">SASS/SCSS</a> are the two horses in this race. I prefer LESS because it more closely resembles vanilla CSS but they are both essentially the same. Dynamic CSS languages introduce variables, functions a kind of object orientation (to cut a long story short). The variables are great and blow your mind the first time you use them well. Dynamic CSS can however be dangerous in the wrong hands. One feature, nesting, allows css classes to be nested one in another to simulate the prefixing of a class in front of other classes e.g
 
 
-<div class="highlight"><pre><code class="css"><span class="nc">.teaser</span> <span class="nt">ul</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.teaser</span> <span class="nt">ul</span> <span class="p">{</span>
   <span class="k">margin</span><span class="o">:</span><span class="m">0</span>
 <span class="p">}</span>
 <span class="nc">.teaser</span> <span class="nt">ul</span> <span class="nt">li</span><span class="p">{</span>
   <span class="k">color</span><span class="o">:</span><span class="nb">red</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 
 is written as follows, but gets compiled into exactly the same CSS
 
 
-<div class="highlight"><pre><code class="css"><span class="nc">.teaser</span> <span class="nt">ul</span><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.teaser</span> <span class="nt">ul</span><span class="p">{</span>
   <span class="k">margin</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
 
   <span class="n">li</span><span class="err">{</span>
     <span class="k">color</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
   <span class="p">}</span>
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></figure>
 
 
 This can be great in some situations but I recently encountered code where every single styled element in the DOM had been nested in the one above it. It was a neat way to encapsulate the code, but it meant that for elements 10, 15, even 20 layers deep in the HTML, the CSS selector for those elements also included 10, 15 even 20 class names and IDs as part of the selector string, totalling over 300 points of specificity. It was then my job to make a mobile version of this site and every bloody element needed a specificity of 300+ merely to remove a float or reset a width.
@@ -360,6 +345,14 @@ This can be great in some situations but I recently encountered code where every
                 <h2 aria-hidden="true">Recent posts</h2>
                 <ul class="posts">
                     
+                        <li><h3><a href="/2016/02/26/wagtail-google-accelerated-mobile-pages.html">Tips for Google Accelerated Mobile Pages in Wagtail</a></h3></li>
+                    
+                        <li><h3><a href="/2015/03/24/front-end-overload.html">Front End Overload</a></h3></li>
+                    
+                        <li><h3><a href="/2015/02/24/animate-css-auto-height.html">Animating CSS height to auto</a></h3></li>
+                    
+                        <li><h3><a href="/2014/08/27/death-of-gamers.html">Death of gamers or death of the internet pecking order?</a></h3></li>
+                    
                         <li><h3><a href="/2014/06/23/grunt-export-tilemill-layers.html">Using Grunt.js to automate export of Tilemill layers</a></h3></li>
                     
                         <li><h3><a href="/2014/02/13/jquery-image-fit-window.html">jquery.image-fit-window</a></h3></li>
@@ -371,14 +364,6 @@ This can be great in some situations but I recently encountered code where every
                         <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
                     
                         <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
-                    
-                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
-                    
-                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
                     
                 </ul>
             </nav>

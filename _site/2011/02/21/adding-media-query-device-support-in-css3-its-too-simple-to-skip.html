@@ -9,7 +9,9 @@
     <title>Adding @media query device support in css3 - its too simple to skip | Dave Cranwell</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    
+    <link rel="author" href="https://plus.google.com/+DaveCranwell/">
+    
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700|Bree+Serif" />
     <link rel="stylesheet" href="/assets/css/normalize.css" />
     <link rel="stylesheet" href="/assets/css/syntax.css" />
@@ -76,7 +78,7 @@
             <nav class="nav-networks" role="navigation" aria-label="Networks">
                 <h2 aria-hidden="true">Networks</h2>
                 <ul>
-                    <li><a href="http://twitter.com/davecranwel">Twitter</a></li>
+                    <li><a href="http://twitter.com/davecranwell">Twitter</a></li>
                     <li><a href="http://github.com/davecranwell">Github</a></li>
                     <li><a href="http://www.linkedin.com/in/davecranwell">Linkedin</a></li>
                 </ul>
@@ -85,16 +87,8 @@
 
         <div class="site cf">
             <div role="main" class="main">
-                <!-- <div class="social">
-                    <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="davecranwell">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </div>
- -->
                 <article class="post">
     <h1>Adding @media query device support in css3 - its too simple to skip</h1>
-    <!--<p class="meta">21 Feb 2011</p>-->
 
     <p><h3>Background</h3><p>For those not in-the-know, <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">@media queries</a> are a CSS3 capablity that allows you to group css rules or load an entire stylesheet dependent on specific properties of the client browser. CSS2 had the &quot;media&quot; attribute when adding stylesheets, but CSS3 adds to this. Styles can be conditionally controled dependent on width, aspect-ratio, colour profile, scan method and more. @Media queries are only in CSS3 so not all browsers support it, but <a href="http://caniuse.com/#feat=css-mediaqueries" target="_blank">all the most recent ones do</a> including - importantly - webkit which is the source for most smart phone browsers these days. They are therefore ideal for targetting handheld/mobile devices that can&#39;t achieve the resolutions your site visitors are expected to have on the desktop. I&#39;ve just added @media queries to the stylesheet to this site and it was so incredibly simple I felt compelled to evangelise it.</p><h3>For mobiles</h3><p>Achieving mobile support through media queries is a different approach to traditional methods. In the past developers relied upon perhaps using a subdomain like &quot;mobile.mysite.com&quot; or &quot;iphone.mysite.com&quot;, or at least some awkward browser sniffing and separate CSS files, perhaps even a separate codebase. The intention was to target just the mobile users, often as an afterthought, treating them like bandwidth-starved simpletons who couldn&#39;t manage a full site, diddums. However with the advent of smart phones, the iPad and numerous other tablet devices, &quot;mobile&quot; is an increasingly large percentage of many sites&#39; traffic and no longer refers to a small demographic of people on badly worn Nokias.</p><p>With @media queries, the goal is still to provide the best experience without necessarily the best hardware, but with simplicty that makes multi-platform support something achievable during the core development of your site. Mobile users can finally be treated as first-class citizens! You don&#39;t have to care what specific hardware they&#39;re on - just what that hardware can do.</p><h3>...and desktops</h3><p>@Media queries also herald a change in treatment of desktop users. Most sites to this day are still designed for users on either 800x600 resolution, or 1024x768. Despite a huge number of people (particularly in creative sectors) capable of over twice those resolutions, the common denominator is still 1024 or 800. A site tends to be designed for one or other res&#39;, occasionally both, but all the while missing a key point (oft screamed in anger by my colleague <a href="http://twitter.com/garrettc" target="_blank">@garrettc</a>) that<strong> screen resolution does not equal viewport size</strong>. Many users would - if only you supported it - view your site at less than the intended resolution; having a browser window fill your screen is often plain awkward!</p><p>What the simplicity of @media queries advocates is that a site does not have to look exactly the same for all users. If someone wants to view your 1024px site at screen only 600px wide, why penalise them? Why add horizontal scroll bars and risk that vital bargain offer advert never being seen?</p><p>The other thing about media queries is that they aren&#39;t just for mobiles - they&#39;re for you, the designer. You want your site to look its best at all resolutions, right? So why target just the mobile users? There are bound to be a range of resolutions where your site looks commically small, ridiculously spread out, or horribly positionned.</p><h3>In practice</h3><p>Why use @media queries? Because more and more people are browsing your website using handheld devices. Machines for which that enforced resolution you spent so long umming and ahing over poses a problem.</p><p>Try resizing the browser window while viewing this site, even right down to just a couple of hundred pixels wide. Notice how things shift around, realign and and resize? Thats @media queries - no Javascript necessary. If you check the CSS to this site, my media queries don&#39;t even target the common handheld widths (320, 480, 600), they target the widths at which things start to look a bit odd even on a desktop browser. You do of course need <em>some</em> overlap with handheld resolution, but my point is they&#39;re still a small demographic and @media queries are for everyone. Take the first,</p><p><code>@media all and (max-width:1000px)</code></p> <p>This is basically just saying &quot;target all media&quot; (which includes screen, print, mobile, handheld) where the max width of the page is 1000px i.e everything below 1000px. I&#39;m doing this because although i&#39;ve designed the site for 1024, I care how it looks when not viewed at that resolution - I&#39;m not even targetting a particular device.</p><p><code>@media all and </code><code>(max-width:700px)</code></p><p>As above, this is aiming at any devices lower than 700px. I could have chosen 600 which is a common mobile resolution, but the logo and social media links at the top started to look cramped at 680-ish.</p><p>Also note that one rule overlaps the next: max-width:1000 means &quot;anything up to 1000&quot;, which covers max-width:700 too. This is intentionally loose, since I want the changes for &lt;1024 to affect users at &lt;700 too. I could be more prescriptive and define <code>min-width</code>, to exclude the changes at 1000 from users at 700, but in this case I don&#39;t.</p><p>The point is that i&#39;m killing a whole flock of birds with one stone here:</p> <ul><li>I can ensure my site looks good for my own personal happiness, at any resolution.</li><li>Users who are limited in resolution still get a nice looking site.</li><li>I don&#39;t force users to go full-screen just to see the site as I intended.</li><li>This requires no additional technology (with the exception of CSS3 which all my targets support anyway); no subdomains, no javascript sniffing.</li><li>I don&#39;t even really need to create an iphone app for my site (were it to be more than just a blog) since @media queries could allow me to do a great deal more customisation than i&#39;ve done already and make it look like an app. I could even target just iOS platforms with the <code>only</code> keywords in media queries, <a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/OptimizingforSafarioniPhone/OptimizingforSafarioniPhone.html" target="_blank">which is documented more here</a>.</li></ul><p>Like I said - its so simple, why not do it?</p></p>
 
@@ -137,6 +131,14 @@
                 <h2 aria-hidden="true">Recent posts</h2>
                 <ul class="posts">
                     
+                        <li><h3><a href="/2016/02/26/wagtail-google-accelerated-mobile-pages.html">Tips for Google Accelerated Mobile Pages in Wagtail</a></h3></li>
+                    
+                        <li><h3><a href="/2015/03/24/front-end-overload.html">Front End Overload</a></h3></li>
+                    
+                        <li><h3><a href="/2015/02/24/animate-css-auto-height.html">Animating CSS height to auto</a></h3></li>
+                    
+                        <li><h3><a href="/2014/08/27/death-of-gamers.html">Death of gamers or death of the internet pecking order?</a></h3></li>
+                    
                         <li><h3><a href="/2014/06/23/grunt-export-tilemill-layers.html">Using Grunt.js to automate export of Tilemill layers</a></h3></li>
                     
                         <li><h3><a href="/2014/02/13/jquery-image-fit-window.html">jquery.image-fit-window</a></h3></li>
@@ -148,14 +150,6 @@
                         <li><h3><a href="/2012/09/04/speaking-circuits-and-the-cult-of-celebrity.html">Speaking circuits and the cult of celebrity</a></h3></li>
                     
                         <li><h3><a href="/2012/08/31/10-tips-for-better-css.html">10 tips for better css</a></h3></li>
-                    
-                        <li><h3><a href="/2012/06/12/an-open-letter-to-bt-regarding-the-outage-of-my-phone-line.html">An open letter to BT regarding the outage of my phone line.</a></h3></li>
-                    
-                        <li><h3><a href="/2012/04/23/adobe-air-billing-application-catharsis.html">Adobe Air billing application catharsis</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/18/lshtm-timeline-using-my-jquery-parallax-plugin.html">LSHTM Timeline using my jQuery parallax plugin</a></h3></li>
-                    
-                        <li><h3><a href="/2011/10/12/a-hosting-conundrum.html">A hosting conundrum</a></h3></li>
                     
                 </ul>
             </nav>
