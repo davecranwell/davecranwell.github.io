@@ -30,7 +30,7 @@ This can be done like so:
 
 ## 2. Set a global context var to indicate AMP status
 
-You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I would normally switch between `<img>` and `<amp-img></amp-img>`. Indeed I can switch off all the parts of the page that shouldn't be part of the AMP version.
+You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I can switch the rendering of any part of the page.
 
 I'm also setting `context['base_template'] = 'amp_base.html'`. This allows my `news_page.html` template to start by extending the right base template. Any django template developer will usually extend from a `base.html` (or similar) and this means I can use the following to switch to the AMP-specific version:
 
