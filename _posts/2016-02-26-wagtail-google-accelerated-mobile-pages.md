@@ -34,7 +34,7 @@ You'll see in the above example that I'm setting `context['is_amp'] = True` befo
 
 I'm also setting `context['base_template'] = 'amp_base.html'`. This allows my `news_page.html` template to start by extending the right base template. Any django template developer will usually extend from a `base.html` (or similar) and this means I can use the following to switch to the AMP-specific version:
 
-`{% extends base_template|default:"base.html" %}`
+{% highlight django %}{% extends base_template|default:"base.html" %}{% highlight %}
 
 ## Have a separate AMP-specific base template
 
@@ -48,7 +48,7 @@ The AMP spec requires you to replace all your vanilla, self-closing `<img>` tags
 
 The `{% image %}` tag hides away the implementation of the actual `<img>` element, so you'll want to start by using `{% image as foo %}` a lot more. This means you can output an `<img>` manually e.g
 
-{% highlight html %}
+{% highlight django %}
     {% image foo fill-123x456 as bar %}
     <img src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}" />
 {% endhighlight %}
