@@ -2,6 +2,7 @@
 layout: post
 title: "Tips for Google Accelerated Mobile Pages in Wagtail"
 ---
+If you're new to this, start with the [introduction and tutorial here](https://www.ampproject.org/docs/get_started/about-amp.html).
 
 ## 1. Use `RoutablePageMixin`
 
