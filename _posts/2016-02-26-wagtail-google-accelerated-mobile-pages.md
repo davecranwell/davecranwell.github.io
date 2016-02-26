@@ -30,7 +30,7 @@ This can be done like so:
 
 ## Set a global context var to indicate amp status
 
-You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I would normally switch between `<img>` and `<amp-img></amp-img>`.
+You'll see in the above example that I'm setting `context['is_amp'] = True` before rendering. It's on the presence of this variable that I would normally switch between `<img>` and `<amp-img></amp-img>`. Indeed I can switch off all the parts of the page that shouldn't be part of the AMP version.
 
 I'm also setting `context['base_template'] = 'amp_base.html'`. This allows my `news_page.html` template to start by extending the right base template. Any django template developer will usually extend from a `base.html` (or similar) and this means I can use the following to switch to the AMP-specific version:
 
@@ -65,7 +65,7 @@ If such a tool were run offline, you'd have a hard time planning for the  option
 
 This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/theory such as BEM, SMACSS, or the general paradigms suggested by Patternlab.io. Adopting these is likely to result in your main CSS file containing something like this (SASS) example:
 
-{% highlight css %}
+{% highlight sass %}
     @import 'variables';
     @import 'grid';
     @import 'mixins';
@@ -107,4 +107,4 @@ This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/
     @import 'templates/article';
 {% endhighlight %}
 
-Such a breakdown makes it far easier to create a `main-amp.css` file or similar, in which you can include only the bits really needed by your AMP pages.
+Such a breakdown makes it far easier to create a `main-amp.css` alternate file or similar, in which you can include only the bits really needed by your AMP pages.
