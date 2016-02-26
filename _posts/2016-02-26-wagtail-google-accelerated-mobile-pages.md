@@ -52,7 +52,7 @@ The `{% raw %}{% image %}{% endraw %}` tag hides away the implementation of the 
 
 {% highlight django %}
 {% raw %}{% image foo fill-123x456 as bar %}{% endraw %}
-<img src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}" />
+<img {% raw %}src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}"{% endraw %} />
 {% endhighlight %}
 
 And of course then it's trivial to change `<img>` for `<amp-img></amp-img>`. With the presence of the `is_amp` context var, you can switch between the two.
