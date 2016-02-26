@@ -12,20 +12,20 @@ This can be done like so:
 
 {% highlight python %}
 
-    class NewsPage(RoutablePageMixin, BasePage, Page):
-        # your model here
+class NewsPage(RoutablePageMixin, BasePage, Page):
+    # your model here
 
-        @route(r'^$')
-        def vanilla(self, request):
-            return Page.serve(self, request)
+    @route(r'^$')
+    def vanilla(self, request):
+        return Page.serve(self, request)
 
-        @route(r'^amp/$')
-        def amp(self, request):
-            context = self.get_context(request)
-            context['is_amp'] = True
-            context['base_template'] = 'amp_base.html'
-            response = TemplateResponse(request, self.template, context)
-            return response
+    @route(r'^amp/$')
+    def amp(self, request):
+        context = self.get_context(request)
+        context['is_amp'] = True
+        context['base_template'] = 'amp_base.html'
+        response = TemplateResponse(request, self.template, context)
+        return response
 
 {% endhighlight %}
 
