@@ -62,13 +62,20 @@ And of course then it's trivial to change `<img>` for `<amp-img></amp-img>`. Wit
 
 I'd perhaps suggest you use a single `{% raw %}{% include %}{% endraw %}` template for all images you want to display in your AMP versions. That way, there's only one place where `<img>` and `<amp-img></amp-img>` are switched.
 
-## 5. ...and declare them as "responsive" whenever necessary
+## 5. Use Streamfield particularly for its `ImageBlock`
+
+If you're currently using Wagtails' standard `RichTextField` you're going to find it very hard to make that important swap from `<img>` to `<amp-img></amp-img>` since the `<img>` tag is completely hidden within Wagtail.
+
+Streamfield by comparison exposes the blocks you use to define images, in the template. So you can use the `{% raw %}{% image %}{% endraw %}` tag like you would with any other image field in your model.
+
+
+## 6. Declare images as "responsive" whenever necessary
 
 I kept on missing the documentation on [layout](https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image) which in this case doesn't mean "responsive" as in [RICG](https://responsiveimages.org/) but responsive as in they resize and aren't fixed.
 
 Add `layout="responsive"` to your `<amp-img></amp-img>` tags whenever your image is meant to scale to fit the screen (as they are likely to, being a responsible developer :P).
 
-## 6. Componentise your CSS
+## 7. Componentise your CSS
 
 AMP requires you to inline all your CSS at the top of the file (not as `style` attributes). If you've got a monolith CSS file, this is going to be tricky. There is software out there which automatically works out what rules are actually used on a page, but I'm yet to find one that does so dynamically and efficiently.
 
@@ -120,8 +127,3 @@ This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/
 
 Such a breakdown makes it far easier to create a `main-amp.css` alternate file or similar, in which you can include only the bits really needed by your AMP pages.
 
-## 7. Use Streamfield particularly for its `ImageBlock`
-
-If you're currently using Wagtails' standard `RichTextField` you're going to find it very hard to make that important swap from `<img>` to `<amp-img></amp-img>` since the `<img>` tag is completely hidden within Wagtail.
-
-Streamfield by comparison exposes the blocks you use to define images, in the template. So you can use the `{% raw %}{% image %}{% endraw %}` tag like you would with any other image field in your model.
