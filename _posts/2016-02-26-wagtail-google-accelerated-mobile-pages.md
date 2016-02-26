@@ -61,7 +61,7 @@ I'd perhaps suggest you use a single `{% raw %}{% include %}{% endraw %}` templa
 
 ## 5. ...and declare them as "responsive" whenever necessary
 
-I kept on missing this bit of documentation: https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image which in this case doesn't mean "responsive" as in https://responsiveimages.org/ but responsive as in they resize and aren't fixed.
+I kept on missing the documentation on [layout](https://www.ampproject.org/docs/guides/amp_replacements.html#include-an-image) which in this case doesn't mean "responsive" as in [RICG](https://responsiveimages.org/) but responsive as in they resize and aren't fixed.
 
 Add `layout="responsive"` to your `<amp-img></amp-img>` tags whenever your image is meant to scale to fit the screen (as they are likely to, being a responsible developer :P).
 
