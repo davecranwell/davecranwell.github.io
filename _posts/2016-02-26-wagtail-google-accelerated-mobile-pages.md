@@ -119,3 +119,9 @@ This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/
 {% endhighlight %}
 
 Such a breakdown makes it far easier to create a `main-amp.css` alternate file or similar, in which you can include only the bits really needed by your AMP pages.
+
+## 7. Use Streamfield particularly for its `ImageBlock`
+
+If you're currently using Wagtails' standard `RichTextField` you're going to find it very hard to make that important swap from `<img>` to `<amp-img></amp-img>` since the `<img>` tag is completely hidden within Wagtail.
+
+Streamfield by comparison exposes the blocks you use to define images, in the template. So you can use the `{% raw %}{% image %}{% endraw %}` tag like you would with any other image field in your model.
