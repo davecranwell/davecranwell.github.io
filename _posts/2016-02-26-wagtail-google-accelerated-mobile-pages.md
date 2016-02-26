@@ -56,3 +56,55 @@ The `{% image %}` tag hides away the implementation of the actual `<img>` elemen
 And of course then it's trivial to change `<img>` for `<amp-img></amp-img>`. With the presence of the `is_amp` context var, you can switch between the two.
 
 I'd perhaps suggest you use a single `{% include %}` template for all images you want to display in your AMP versions. That way, there's only one place where `<img>` and `<amp-img></amp-img>` are switched.
+
+## Componentise your CSS
+
+AMP requires you to inline all your CSS at the top of the file (not as `style` attributes). If you've got a monolith CSS file, this is going to be tricky. There is software out there which automatically works out what rules are actually used on a page, but I'm yet to find one that does so dynamically and efficiently.
+
+If such a tool were run offline, you'd have a hard time planning for the  optional blocks of content, which your users might be adding or removing later in time.
+
+This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/theory such as BEM, SMACSS, or the general paradigms suggested by Patternlab.io. Adopting these is likely to result in your main CSS file containing something like this (SASS) example:
+
+{% highlight css %}
+    @import 'variables';
+    @import 'grid';
+    @import 'mixins';
+
+    // Third party plugins
+    @import 'vendor/normalize';
+
+    // Core: head/footer, things not needed to be reusable
+    @import 'core/fonts';
+    @import 'core/global-elements';
+    @import 'core/typography';
+    @import 'core/header';
+    @import 'core/footer';
+    @import 'core/main';
+    @import 'core/primary-nav';
+    @import 'core/mobile-nav';
+    @import 'core/inputs';
+
+    // Components: Individual, discrete pieces of UI
+    @import 'components/wagtail-styles';
+    @import 'components/icons';
+    @import 'components/buttons';
+    @import 'components/cards';
+    @import 'components/tables';
+    @import 'components/sharing';
+    @import 'components/panels';
+    @import 'components/tabs';
+    @import 'components/meta-bar';
+
+    // Organisisms: Groups of components
+    @import 'organisms/heros';
+    @import 'organisms/streamfield';
+    @import 'organisms/listings';
+    @import 'organisms/tab-bar';
+    @import 'organisms/forms';
+    @import 'organisms/pagination';
+
+    // Templates: groups of organisms & components
+    @import 'templates/article';
+{% endhighlight %}
+
+Such a breakdown makes it far easier to create a `main-amp.css` file or similar, in which you can include only the bits really needed by your AMP pages.
