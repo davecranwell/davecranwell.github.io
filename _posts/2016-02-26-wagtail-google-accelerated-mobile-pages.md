@@ -10,7 +10,7 @@ Before we can serve a Wagtail AMP we need to work out how Google is to locate ea
 
 This can be done like so:
 
-{% highlight python %}
+``` python
 
 class NewsPage(RoutablePageMixin, BasePage, Page):
     # your model here
@@ -27,7 +27,7 @@ class NewsPage(RoutablePageMixin, BasePage, Page):
         response = TemplateResponse(request, self.template, context)
         return response
 
-{% endhighlight %}
+```
 
 You could of course use the `amp()` method to switch out the `news_page.html` template for a `news_page_amp.html`. It depends how complicated your templates are and you could end up maintaining twice as many templates.
 
@@ -37,9 +37,9 @@ You'll see in the above example that I'm setting `context['is_amp'] = True` befo
 
 I'm also setting `context['base_template'] = 'amp_base.html'`. This allows my `news_page.html` template to start by extending the right base template. Any django template developer will usually extend from a `base.html` (or similar) and this means I can use the following to switch to the AMP-specific version:
 
-{% highlight django %}
+``` liquid
 {% raw %}{% extends base_template|default:"base.html" %}{% endraw %}
-{% endhighlight %}
+```
 
 ## 3. Have a separate AMP-specific base template
 
@@ -53,10 +53,10 @@ The AMP spec requires you to replace all your vanilla, self-closing `<img>` tags
 
 The `{% raw %}{% image %}{% endraw %}` tag hides away the implementation of the actual `<img>` element, so you'll want to start by using `{% raw %}{% image as foo %}{% endraw %}` a lot more. This means you can output an `<img>` manually e.g
 
-{% highlight django %}
+``` liquid
 {% raw %}{% image foo fill-123x456 as bar %}{% endraw %}
 <img {% raw %}src="{{ bar.url }}" width="{{ bar.width }}" height="{{ bar.height }}"{% endraw %} />
-{% endhighlight %}
+```
 
 And of course then it's trivial to change `<img>` for `<amp-img></amp-img>`. With the presence of the `is_amp` context var, you can switch between the two.
 
@@ -83,7 +83,7 @@ If such a tool were run offline, you'd have a hard time planning for the  option
 
 This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/theory such as BEM, SMACSS, or the general paradigms suggested by Patternlab.io. Adopting these is likely to result in your main CSS file containing something like this (SASS) example:
 
-{% highlight sass %}
+``` sass
 @import 'variables';
 @import 'grid';
 @import 'mixins';
@@ -123,7 +123,7 @@ This isn't really Wagtail-specific, but I'd suggest adopting a CSS architecture/
 
 // Templates: groups of organisms & components
 @import 'templates/article';
-{% endhighlight %}
+```
 
 Such a breakdown makes it far easier to create a `main-amp.css` alternate file or similar, in which you can include only the bits really needed by your AMP pages.
 
