@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Death of gamers or death of the internet pecking order?
+published: false
 ---
 
 @dangolding [recently posted an interesting view on the recent debacle around mysogyny/feminism in gaming](http://dangolding.tumblr.com/post/95985875943/the-end-of-gamers). In it he suggests the reason so much vitriol has been directed at the likes of Anita Sarkeesian is because, underneath it all, gamers are conscious that they're no longer unique, and this loss of identity cuts deep.
@@ -17,4 +18,4 @@ When meeting in person the severity of this combative banter varies enormously, 
 
 The trouble is this dynamic doesn't work in unfamiliar company. I've lost count of the times I've experienced a girlfriend/wife rebuke her male partner due to his bonding banter with mates: the joke that goes too far, or is too soon, too crude, or at her expense. It's this perceived need for self-censorship that I suspect is the backdrop to the hate. The fear that to share toys with unfamiliar people requires you to behave differently too. 
 
-It's not the loss of identity that upsets these gamers, it's having to change an identity they've spent decades positioning in a social pecking order. Outright loss could probably be handled easier. 
+It's not the loss of identity that upsets these gamers, it's having to change an identity they've spent decades positioning in a social pecking order. Outright loss could probably be handled easier.
