@@ -18,7 +18,8 @@ But what would those rule look like if they did exist? Here's my shot at them:
 If you need to interrupt someone, literally plan your interruptive sentence word by word. What is required for your colleague to respond appropriately?
 
 **Do** 
-1. Be polite but terse. Say "May I interrupt you?". Courtesy costs nothing.
+1. Be polite but terse. 
+2. Say "May I interrupt you?". Acknowledging the inconvenience can lower defenses.
 2. Include one or more of:
     - The urgency of the problem 
     - Whether you're blocked 
