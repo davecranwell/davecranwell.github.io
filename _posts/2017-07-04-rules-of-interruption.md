@@ -44,7 +44,7 @@ Even if you're focusing on a problem, you should be able to spare the cognitive 
 
 If your colleague is blocked and their summary suggests it's mission-critical, consider taking one for the team and dropping what you're doing. Greater good and all that.
 
-If you postponed an interruption and your colleague comes over again after the elapsed time, remember that you have managed to continue working efficiently. You got your shot, now give your colleague theirs.
+If you postponed an interruption and your colleague returns after the elapsed time, be aware that you managed to continue working. You got your shot, now give your colleague theirs.
 
 ## 4. Take responsibility for working without help
 
