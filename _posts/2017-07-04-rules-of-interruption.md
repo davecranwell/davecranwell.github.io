@@ -21,9 +21,9 @@ If you need to interrupt someone, literally plan your interruptive sentence word
 1. Be polite but terse.
 2. Say "May I interrupt you?". Courtesy costs nothing.
 3. Include one or more of:
-  1. The urgency of the problem 
-  2. Whether you're blocked 
-  3. An estimate of how much of their time you'll need.
+    1. The urgency of the problem 
+    2. Whether you're blocked 
+    3. An estimate of how much of their time you'll need.
   
 e.g "Hi Dave, may I interrupt you? I've need a 5 minute code review.". "Hi Dave, may I interrupt you? I'm blocked and I need to ship this in an hour".
 
