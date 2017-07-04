@@ -2,12 +2,12 @@
 published: true
 layout: post
 ---
-# Rules Of Interruption
+This tweet from Ross Chapman highlights an old problem. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I want to hear as many viable solutions as possible on &quot;how do I cut interruptions in an open-plan space?&quot; GO.</p>&mdash; Ross Chapman (@rosschapman) <a href="https://twitter.com/rosschapman/status/882213944806567937">July 4, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-This tweet from Ross highlights an old problem. I see tweets like this regularly and have done for years. What's odd is that in the world of development teams where _everything_ becomes a documented process, or code of conduct, or concensus of behaviour, this is still poorly handled.
+What's odd is that in the world of development teams where _everything_ becomes a documented process, or code of conduct, or concensus of behaviour, this is still poorly handled.
 
 In an ideal world, collaborative environments would have rules of engagement when entering into a conversation. However enforcing them across teams over which you have no control is next to impossible and lets be honest, you mostly come across looking like a dick.
 
