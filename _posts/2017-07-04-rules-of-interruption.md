@@ -2,7 +2,7 @@
 published: true
 layout: post
 ---
-This tweet from Ross Chapman highlights an old problem. 
+This thread started by Ross Chapman highlights an old problem. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I want to hear as many viable solutions as possible on &quot;how do I cut interruptions in an open-plan space?&quot; GO.</p>&mdash; Ross Chapman (@rosschapman) <a href="https://twitter.com/rosschapman/status/882213944806567937">July 4, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
