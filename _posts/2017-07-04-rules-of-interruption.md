@@ -34,7 +34,7 @@ e.g "Hi Dave, may I interrupt you? I've need a 5 minute code review.". "Hi Dave,
 
 ## 2. You are always interruptible
 
-But if your colleague has followed the steps above, you should be able to triage the interruption with minimal impact on your productivity. Importantly: **Having heard them out, you reserve the right to immediately postpone the interruption when necessary**. 
+But if your colleague has followed the steps above, you should be able to triage their interruption with minimal impact on productivity. Importantly: **Having heard them out, you reserve the right to immediately postpone the interruption when necessary**. 
 
 Many people suggest if you don't want to be disturbed you should wear headphones. This works some of the time, but you're neglecting your obligations to function as a team member. Your colleague needs their question answered. Are they to waste their own time repeatedly checking whether you still have your headphones on every few minutes? 
 
