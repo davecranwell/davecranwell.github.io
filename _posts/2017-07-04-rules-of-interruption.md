@@ -13,6 +13,8 @@ In an ideal world, collaborative environments would have rules of engagement for
 
 But what would those rule look like if they did exist? Here's my shot at them:
 
+**Update:** It's been pointed out that "Rules" sounds authoritarian. "Considerations" is probably a better term. However we only have to look at the daily Twitter misunderstandings to see that power of poor communication. So while I would stop short of printing this in red letters on every wall in an office, I would absolutely discuss this with team-members. Not everyone is naturally gregarious and human interaction is genuinely hard for some. Knowing the parameters and expectations can't _harm_ the interaction in a team, but ignorance could.
+
 ## 1. Plan your interruption
 
 If you need to interrupt someone, literally plan your interruptive sentence word by word. What is required for your colleague to respond appropriately?
