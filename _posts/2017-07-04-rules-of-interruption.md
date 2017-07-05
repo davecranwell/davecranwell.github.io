@@ -30,7 +30,7 @@ e.g "Hi Dave, may I interrupt you? I've need a 5 minute code review.". "Hi Dave,
 **Don't** 
  
 1. Include forced pleasantries. Your colleague may already be annoyed, don't waste their time with etiquette. 
-2. Go into _any_ technical detail. If your colleague has the knowledge, their mind will unavoidably start solving the problem, try as they might to resume their work. Their productivity has bottomed out.
+2. Provide _any_ technical detail. It's a form of "earworm", like saying "Don't think of a cat". The slightest whiff of detail will distract them however hard they try to focus.
 
 ## 2. You are always interruptible
 
