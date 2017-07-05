@@ -9,7 +9,7 @@ This thread started by Ross Chapman highlights an old problem.
 
 What's odd is that in the world of development teams where _everything_ becomes a documented process, or code of conduct, or concensus of behaviour, this is still poorly handled.
 
-In an ideal world, collaborative environments would have rules of engagement when entering into a conversation. However enforcing them across teams over which you have no control is next to impossible and lets be honest, you mostly come across looking like a dick.
+In an ideal world, collaborative environments would have rules of engagement for conversation. However enforcing them across teams is next to impossible and lets be honest, you mostly come across looking like a dick.
 
 But what would those rule look like if they did exist? Here's my shot at them:
 
