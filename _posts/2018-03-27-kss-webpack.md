@@ -1,5 +1,6 @@
 ---
 published: false
+layout: post
 ---
 
 At work we're documenting a large-scale UI overhaul in which we're using Webpack to compile the front end assets. We also need a [Pattern library](adele.uxpin.com). Our company's software is large and complicated enough that even in contrived developer environments you can't easily find examples of every part of the UI. Pattern libraries allow you to document everything in one place, cross refer patterns and check for visual regressions, without needing to use the product itself.
