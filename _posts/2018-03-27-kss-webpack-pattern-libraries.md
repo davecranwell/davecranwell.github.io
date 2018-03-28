@@ -60,7 +60,7 @@ Styleguide: Button.group
 */
 ```
 
-That `{% raw %}{{> "foo" }}{% endraw %}` syntax is Handlebars "partial" syntax. `foo` corresponds to the value defined for each pattern's `Styleguide:` property. Partials can take parameters and operate as wrappers/blocks too, these are useful for supplying other content for your examples.
+That `{% raw %}{{> "foo" }}{% endraw %}` is Handlebars "partial" syntax. `foo` corresponds to the value defined for each pattern's `Styleguide:` property. Partials can take parameters and operate as wrappers/blocks too, these are useful for supplying other content for your examples.
 
 ## KSS-webpack-plugin
 
