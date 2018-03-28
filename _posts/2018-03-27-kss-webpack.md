@@ -21,13 +21,13 @@ Button
 Buttons are expected to use the `button` element.
 
 Markup:
-<button class="button">
+<button class="button">{% raw %}
 	{{#if text}}
 		{{text}}
 	{{else}}
 		Click me
 	{{/if}}
-</button>
+{% endraw %}</button>
 
 Styleguide: Button
 */
@@ -52,9 +52,9 @@ Button group
 A group of buttons
 
 Markup:
-<div class="button-group">
+<div class="button-group">{% raw %}
 	{{> "Button" text="I am a button" }}
-</div>
+{% endraw %}</div>
 
 Styleguide: Button.group
 */
