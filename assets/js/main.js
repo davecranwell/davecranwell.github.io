@@ -1,4 +1,4 @@
-var colorLoversUrl = "http://www.colourlovers.com/api/palettes/top";
+var colorLoversUrl = "https://www.colourlovers.com/api/palettes/top";
 var palettes = JSON.parse(window.localStorage.getItem('palettes'));
 var offset = 0;
 
