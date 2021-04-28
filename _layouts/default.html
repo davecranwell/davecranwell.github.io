@@ -9,7 +9,9 @@
     <title>{% if page.path == "index.html" %}Dave Cranwell | {{ page.title }}{% else %}{{ page.title }} | Dave Cranwell{% endif %}</title>
     <meta name="description" content="{{ page.description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:title" content='{% if page.path == "index.html" %}Dave Cranwell | {{ page.title }}{% else %}{{ page.title }} | Dave Cranwell{% endif %}' />
+    <meta property="og:description" content="{{ page.description }}" />
     <link rel="author" href="https://plus.google.com/+DaveCranwell/">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Bree+Serif" />
