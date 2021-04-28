@@ -1,6 +1,7 @@
 ---
 published: true
 title: Scam protection using a Raspberry Pi to perform caller ID and risk-assess incoming calls
+description: A Raspberry Pi-enabled caller ID device which checks incoming landline calls against databases of known malicious callers, and displays the danger of the incomming caller on a web interface.
 layout: post
 ---
 
@@ -26,7 +27,7 @@ This is essentially what I've attempted, as a little passion project:
 
 With a Raspberry Pi, a tiny USB Modem, some code and a few tedious hours trying to understand the [Hayes AT Commands set](https://en.wikipedia.org/wiki/Hayes_command_set), I've got a reasonable first draft of a box that can be placed beside the phone and can both identify and danger-check every phone call received. The big omission right this moment, is a screen. The "Badcaller" system is for now a browser-based display of your incomming calls and their danger. But this requires you to have a PC, or a phone - this isn't going to help Dad just yet. My next step would be to add a small screen, then perhaps a housing. Raspberry Pi's can be reasonably easily put into a "Kiosk mode" and when that's viable, I hope to test it with him.
 
-This is, of course, a doomed project in a way. The best outcome I could possibly achieve - making all scam calling untenable at a global level - would make this project/product useless. But it would be nice if someone else wanted to help and give it a shot. Let me know if you do!
+This is, of course, a doomed project in a way. The best outcome I could possibly achieve - making all scam calling untenable at a global level - would make this project/product useless. But it would be nice if someone else wanted to help and give it a shot. Let me know if you do! 
 
 Read more about the project on the [Github page](https://github.com/davecranwell/badcaller)
 
