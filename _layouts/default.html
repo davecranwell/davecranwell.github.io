@@ -12,6 +12,9 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:title" content='{% if page.path == "index.html" %}Dave Cranwell | {{ page.title }}{% else %}{{ page.title }} | Dave Cranwell{% endif %}' />
     <meta property="og:description" content="{{ page.description }}" />
+    {% assign wordCount = post.content | number_of_words %}
+    <meta property="twitter:label1" value="Reading time" />
+    <meta property="twitter:data1" value="{{ words | divided_by:180 }} mins" />
     <link rel="author" href="https://plus.google.com/+DaveCranwell/">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Bree+Serif" />
