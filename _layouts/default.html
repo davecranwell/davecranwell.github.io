@@ -16,6 +16,10 @@
         {{ page.content | number_of_words | minus: 180 }}
     {% endcapture %}
 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@davecranwell" />
+    <meta name="twitter:title" content='{% if page.path == "index.html" %}Dave Cranwell | {{ page.title }}{% else %}{{ page.title }} | Dave Cranwell{% endif %}' />
+    <meta name="twitter:description" content="{{ page.description }}" />
     <meta property="twitter:label1" value="Reading time" />
     {% unless words contains '-' %}
         <meta property="twitter:data1" value="{{ words | plus: 180 | divided_by: 180 | append: ' minutes to read' }}" />
